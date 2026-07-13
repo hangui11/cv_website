@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hang Yao — Data Engineer &amp; Scientist</title>
+<meta name="description" content="Hang Yao — data engineering and science in Barcelona. Scalable architectures, ETL pipelines, ML models and analytics.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hang Yao — Data Engineer &amp; Scientist">
+<meta property="og:description" content="Data engineering and science in Barcelona: lakehouses, ETL pipelines, foundation models and analytics.">
+<meta name="theme-color" content="#0b7285">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<title>Hang Yao — Data Engineer &amp; Scientist</title>
+<style>
+  :root {
+    --bg: #f2f6f6;
+    --ink: #17262e;
+    --muted: #54666f;
+    --line: #d3dee0;
+    --soft: #e6eeef;
+    --accent: #0b7285;
+    --accent-2: #d9822b;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", "JetBrains Mono", Consolas, "Liberation Mono", monospace;
+    --sans: system-ui, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d161b;
+      --ink: #e4ecef;
+      --muted: #8fa3ac;
+      --line: #223038;
+      --soft: #142129;
+      --accent: #4bc8cf;
+      --accent-2: #e0a458;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f2f6f6;
+    --ink: #17262e;
+    --muted: #54666f;
+    --line: #d3dee0;
+    --soft: #e6eeef;
+    --accent: #0b7285;
+    --accent-2: #d9822b;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d161b;
+    --ink: #e4ecef;
+    --muted: #8fa3ac;
+    --line: #223038;
+    --soft: #142129;
+    --accent: #4bc8cf;
+    --accent-2: #e0a458;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* language switching: show only the active language's spans */
+  :root[data-lang="en"] :is(.es, .zh) { display: none !important; }
+  :root[data-lang="es"] :is(.en, .zh) { display: none !important; }
+  :root[data-lang="zh"] :is(.en, .es) { display: none !important; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .page {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 56px) clamp(20px, 4vw, 40px) 40px;
+    display: grid;
+    grid-template-columns: 288px 1fr;
+    gap: clamp(36px, 6vw, 72px);
+    align-items: start;
+  }
+
+  /* ---------- rail ---------- */
+  .rail {
+    position: sticky;
+    top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(2.1rem, 4.5vw, 2.9rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .tagline {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 30ch;
+  }
+  .avail {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--accent-2);
+  }
+
+  .rail nav { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 18px; }
+  .rail nav a {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .rail nav a::before { content: "→ "; color: var(--line); }
+  .rail nav a:hover { color: var(--accent); text-decoration: none; }
+  .rail nav a:hover::before { color: var(--accent); }
+  .rail nav a.active { color: var(--accent); }
+  .rail nav a.active::before { color: var(--accent); }
+
+  .contact { list-style: none; margin: 0; padding: 18px 0 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 7px; }
+  .contact li { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); display: flex; gap: 10px; }
+  .contact .k { color: var(--line); user-select: none; min-width: 3.5ch; }
+  .contact a { color: var(--ink); }
+  .contact a:hover { color: var(--accent); }
+
+  .controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 18px; }
+  .controls button {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    background: none;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 5px 11px;
+    cursor: pointer;
+  }
+  .controls button:hover { color: var(--accent); border-color: var(--accent); }
+  .controls button[aria-pressed="true"] { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+  /* ---------- main ---------- */
+  main { min-width: 0; display: flex; flex-direction: column; gap: clamp(40px, 6vw, 60px); }
+
+  .pipeline { border: 1px solid var(--line); border-radius: 4px; background: var(--soft); overflow: hidden; }
+  .pipeline canvas { display: block; width: 100%; height: 92px; }
+
+  section > h2 {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  section > h2 .cmt { color: var(--accent); }
+  section > h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .summary p { margin: 0; max-width: 62ch; font-size: 1.04rem; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 22px; }
+  .stat { border: 1px solid var(--line); border-radius: 4px; background: var(--soft); padding: 10px 12px 9px; }
+  .stat .n { display: block; font-family: var(--mono); font-size: 1.25rem; font-weight: 650; color: var(--ink); letter-spacing: -0.02em; }
+  .stat .l { display: block; font-size: 0.72rem; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+
+  /* entries: experience / education / projects */
+  .entry { display: grid; grid-template-columns: 132px 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .entry:first-of-type { border-top: none; padding-top: 0; }
+  .when {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    padding-top: 3px;
+    white-space: nowrap;
+  }
+  .entry h3 { margin: 0; font-size: 1.06rem; font-weight: 650; line-height: 1.35; text-wrap: balance; }
+  .entry h3 a { color: var(--ink); }
+  .entry h3 a:hover { color: var(--accent); text-decoration: none; }
+  .entry h3 .ext { font-family: var(--mono); font-size: 0.85em; color: var(--accent); }
+  .org { color: var(--muted); font-size: 0.9rem; margin: 2px 0 0; }
+  .entry ul { margin: 10px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; max-width: 62ch; }
+  .entry ul li { font-size: 0.94rem; }
+  .entry ul li::marker { color: var(--accent); }
+
+  .grade {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent-2);
+    border: 1px solid color-mix(in srgb, var(--accent-2) 45%, transparent);
+    border-radius: 3px;
+    padding: 1px 7px;
+    white-space: nowrap;
+    vertical-align: 2px;
+    margin-left: 8px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  /* skills */
+  .skillrow { display: grid; grid-template-columns: 132px 1fr; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .skillrow:first-of-type { border-top: none; padding-top: 0; }
+  .skillrow .k { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); letter-spacing: 0.04em; padding-top: 4px; }
+  .skillrow .tags { margin-top: 0; }
+  .tag.lang b { color: var(--ink); font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 820px) {
+    .page { grid-template-columns: 1fr; gap: 36px; }
+    .rail { position: static; }
+    .rail nav { display: none; }
+    .entry, .skillrow { grid-template-columns: 1fr; gap: 4px; }
+    .when { padding-top: 0; }
+  }
+
+  @media print {
+    .pipeline, .controls, .rail nav { display: none !important; }
+    .page { grid-template-columns: 1fr; gap: 20px; padding: 0; }
+    .rail { position: static; }
+    body { background: #fff; color: #000; }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var q = new URLSearchParams(location.search);
+    var saved = null;
+    try { saved = localStorage.getItem("cv-lang"); } catch (e) {}
+    var lang = q.get("lang") || saved || "en";
+    root.dataset.lang = (lang === "es" || lang === "zh") ? lang : "en";
+  })();
+</script>
+
+<div class="page">
+  <aside class="rail">
+    <div>
+      <p class="eyebrow">
+        <span class="en">// data engineering &amp; science · barcelona</span>
+        <span class="es">// ingeniería y ciencia de datos · barcelona</span>
+        <span class="zh">// 数据工程与科学 · 巴塞罗那</span>
+      </p>
+      <h1><span class="en">Hang Yao</span><span class="es">Hang Yao</span><span class="zh">姚航</span></h1>
+    </div>
+
+    <p class="tagline">
+      <span class="en">The full data lifecycle: scalable architectures, ETL pipelines, ML models and analytics — from ingestion to production.</span>
+      <span class="es">Todo el ciclo de vida del dato: arquitecturas escalables, pipelines ETL, modelos de ML y analítica — de la ingesta a producción.</span>
+      <span class="zh">覆盖数据全生命周期：可扩展架构、ETL 流水线、机器学习模型与数据分析——从数据摄取到生产环境。</span>
+    </p>
+    <p class="avail zh">2026届应届硕士 · 随时可到岗</p>
+
+    <nav aria-label="Sections">
+      <a href="#perfil"><span class="en">profile</span><span class="es">perfil</span><span class="zh">个人总结</span></a>
+      <a href="#experiencia"><span class="en">experience</span><span class="es">experiencia</span><span class="zh">工作经验</span></a>
+      <a href="#proyectos"><span class="en">projects</span><span class="es">proyectos</span><span class="zh">项目经历</span></a>
+      <a href="#educacion"><span class="en">education</span><span class="es">educación</span><span class="zh">教育背景</span></a>
+      <a href="#habilidades"><span class="en">skills</span><span class="es">habilidades</span><span class="zh">专业技能</span></a>
+    </nav>
+
+    <ul class="contact">
+      <li><span class="k">mail</span><a href="mailto:hangyao2002@gmail.com">hangyao2002@gmail.com</a></li>
+      <li><span class="k">git</span><a href="https://github.com/hangui11" target="_blank" rel="noopener">github.com/hangui11</a></li>
+      <li><span class="k">in</span><a href="https://www.linkedin.com/in/hangui11" target="_blank" rel="noopener">linkedin.com/in/hangui11</a></li>
+      <li><span class="k">loc</span><span class="en">Barcelona, Spain</span><span class="es">Barcelona, España</span><span class="zh">西班牙 · 巴塞罗那</span></li>
+    </ul>
+
+    <div class="controls">
+      <button id="lang-en" aria-pressed="false">EN</button>
+      <button id="lang-es" aria-pressed="false">ES</button>
+      <button id="lang-zh" aria-pressed="false">中文</button>
+      <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="pipeline" aria-hidden="true"><canvas id="pipe"></canvas></div>
+
+    <section id="perfil" class="summary">
+      <h2><span class="cmt">--</span> <span class="en">profile</span><span class="es">perfil</span><span class="zh">个人总结</span></h2>
+      <p class="en">
+        Results-driven data professional covering the full data lifecycle — from scalable architectures and robust ETL
+        pipelines to predictive modeling with foundation models (LLMs/VLMs) and actionable business analytics. Proven
+        ability to design end-to-end Data Lakehouse environments and take complex ML workflows to production with
+        Spark, Airflow, DuckDB and PyTorch. Backed by enterprise software engineering experience at NTT DATA — solid
+        backend microservices, REST APIs and strict financial-data compliance.
+      </p>
+      <p class="es">
+        Profesional de datos orientado a resultados que cubre todo el ciclo de vida del dato: desde arquitecturas
+        escalables y pipelines ETL robustos hasta el modelado predictivo con modelos fundacionales (LLMs/VLMs) y la
+        analítica de negocio accionable. Capacidad demostrada para diseñar entornos Data Lakehouse de extremo a extremo
+        y llevar a producción flujos de ML complejos con Spark, Airflow, DuckDB y PyTorch. Respaldado por experiencia
+        en ingeniería de software empresarial en NTT DATA: microservicios backend sólidos, APIs REST y estricto
+        cumplimiento normativo en datos financieros.
+      </p>
+      <p class="zh">
+        结果导向的数据全栈人才，覆盖数据全生命周期：从可扩展的数据架构与健壮的 ETL 流水线，到基于基础大模型
+        (LLMs/VLMs) 的预测性建模与可落地的商业分析。具备构建端到端数据湖仓 (Data Lakehouse)，并使用
+        Spark、Airflow、DuckDB 和 PyTorch 将复杂机器学习工作流推向生产环境的验证能力。在 NTT DATA
+        积累了企业级软件工程经验：扎实的后端微服务、REST API 以及严格的金融数据合规。
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="n">90.2%</span>
+          <span class="l"><span class="en">structurally valid VLM outputs</span><span class="es">salidas VLM estructuralmente válidas</span><span class="zh">结构化有效输出（VLM 流水线）</span></span>
+        </div>
+        <div class="stat">
+          <span class="n">150k+</span>
+          <span class="l"><span class="en">API records ingested</span><span class="es">registros de API ingeridos</span><span class="zh">摄取的 API 记录</span></span>
+        </div>
+        <div class="stat">
+          <span class="n">10 GB</span>
+          <span class="l"><span class="en">heterogeneous data integrated</span><span class="es">datos heterogéneos integrados</span><span class="zh">集成的多源数据集</span></span>
+        </div>
+        <div class="stat">
+          <span class="n">~90%</span>
+          <span class="l"><span class="en">unit-test coverage sustained</span><span class="es">cobertura de tests unitarios</span><span class="zh">核心模块测试覆盖率</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <h2><span class="cmt">--</span> <span class="en">experience</span><span class="es">experiencia</span><span class="zh">工作经验</span></h2>
+      <div class="entry">
+        <div class="when">2024.02 – 2025.06</div>
+        <div>
+          <h3><span class="en">Back-End Engineer Intern</span><span class="es">Ingeniero Back-End (Prácticas)</span><span class="zh">后端开发工程师（实习）</span></h3>
+          <p class="org">NTT DATA · <span class="en">Barcelona</span><span class="es">Barcelona</span><span class="zh">巴塞罗那 · 世界500强 NTT 集团旗下</span></p>
+          <ul>
+            <li class="en">Built enterprise-grade microservices and state-driven workflows on the Spring ecosystem to securely route and process financial records for a major banking client.</li>
+            <li class="es">Desarrollé microservicios de nivel empresarial y flujos de trabajo basados en estados con el ecosistema Spring para enrutar y procesar de forma segura registros financieros de un importante cliente bancario.</li>
+            <li class="zh">使用 Spring 生态系统开发企业级微服务与状态驱动的工作流，为大型银行客户安全地路由和处理金融记录。</li>
+            <li class="en">Mapped UI states directly to custom-designed relational database schemas, executing advanced SQL integrations to ensure rapid and reliable data persistence.</li>
+            <li class="es">Mapeé los estados de la interfaz a esquemas relacionales diseñados a medida, ejecutando integraciones SQL avanzadas para garantizar una persistencia de datos rápida y fiable.</li>
+            <li class="zh">将 UI 状态直接映射至定制设计的关系型数据库架构，执行高级 SQL 集成，以确保数据持久化的高效与可靠。</li>
+            <li class="en">Orchestrated end-to-end service delivery with GitHub Actions, resolving production bugs and sustaining ~90% unit-test coverage on core modules with JUnit.</li>
+            <li class="es">Orquesté la entrega de servicios de extremo a extremo con GitHub Actions, resolviendo errores en producción y manteniendo una cobertura de pruebas unitarias de ~90% con JUnit.</li>
+            <li class="zh">通过 GitHub Actions 编排端到端服务交付，解决生产环境 Bug，并使用 JUnit 将核心模块代码覆盖率维持在约 90%。</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">SQL</span><span class="tag">Microservices</span><span class="tag">JUnit</span><span class="tag">GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <h2><span class="cmt">--</span> <span class="en">projects</span><span class="es">proyectos</span><span class="zh">项目经历</span></h2>
+
+      <div class="entry">
+        <div class="when">lakehouse</div>
+        <div>
+          <h3>
+            <a href="https://github.com/hangui11/MDS-BDM" target="_blank" rel="noopener">
+              <span class="en">Big Data Management — End-to-End Data Lakehouse</span>
+              <span class="es">Gestión de Big Data — Data Lakehouse End-to-End</span>
+              <span class="zh">大数据管理——端到端数据湖仓 (Data Lakehouse)</span>
+              <span class="ext">↗</span>
+            </a>
+          </h3>
+          <ul>
+            <li class="en">Designed a containerized 3-tier (Cold/Warm/Hot) data architecture on Docker, integrating 10 GB of heterogeneous datasets through REST APIs with Spark and Redis.</li>
+            <li class="es">Diseñé una arquitectura de datos en contenedores de 3 niveles (Cold/Warm/Hot) en Docker, integrando 10 GB de conjuntos de datos diversos a través de APIs REST con Spark y Redis.</li>
+            <li class="zh">在 Docker 中设计并实现了容器化的三层数据架构（冷/温/热），使用 Spark 和 Redis 通过 REST API 集成了 10GB 的多源数据集。</li>
+            <li class="en">Orchestrated complex daily ETL workflows with Apache Airflow to guarantee continuous pipeline synchronization and highly available data loading.</li>
+            <li class="es">Orquesté flujos ETL diarios complejos con Apache Airflow para garantizar la sincronización continua del pipeline y una alta disponibilidad en la carga de datos.</li>
+            <li class="zh">通过 Apache Airflow 编排复杂的日常 ETL 工作流，确保流水线的持续同步与高可用的数据加载。</li>
+            <li class="en">Built an interactive web dashboard consolidating cross-platform metrics and running multi-algorithm recommendations on the structured data lake.</li>
+            <li class="es">Desarrollé un dashboard web interactivo que consolida métricas multiplataforma y ejecuta recomendaciones de múltiples algoritmos sobre el lago de datos estructurado.</li>
+            <li class="zh">构建交互式 Web 仪表盘以整合跨平台指标，在结构化的数据湖之上执行多算法推荐系统。</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Spark</span><span class="tag">Airflow</span><span class="tag">Docker</span><span class="tag">Redis</span><span class="tag">Delta Lake</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">vlm</div>
+        <div>
+          <h3>
+            <a href="https://github.com/hangui11/floorplan-graph-vlm" target="_blank" rel="noopener">
+              <span class="en">Floor Plan Graph Extraction with Vision-Language Models</span>
+              <span class="es">Extracción de Grafos desde Planos mediante Modelos de Visión y Lenguaje</span>
+              <span class="zh">基于视觉语言模型 (VLM) 的户型图至拓扑图提取</span>
+              <span class="ext">↗</span>
+            </a>
+          </h3>
+          <ul>
+            <li class="en">Built an annotation-free pipeline converting 1,276 raster floor plans into structured topological graphs using a frozen Vision-Language Model (Qwen3-VL-8B), with no fine-tuning or labelled data.</li>
+            <li class="es">Construí un pipeline sin anotaciones que convierte 1.276 planos ráster en grafos topológicos estructurados usando un VLM congelado (Qwen3-VL-8B), sin fine-tuning ni datos etiquetados.</li>
+            <li class="zh">构建了免标注的数据提取流水线，使用冻结的视觉语言模型 (Qwen3-VL-8B) 将 1,276 张原始光栅户型图转换为结构化的拓扑图，无需任何微调或标注数据。</li>
+            <li class="en">Designed a six-stage prompting strategy (persona conditioning, ordered decision procedures, few-shot visual examples) reaching 90% classification accuracy and structurally valid graphs for 90.2% of plans.</li>
+            <li class="es">Diseñé una estrategia de prompting en seis etapas (condicionamiento de persona, procedimientos de decisión ordenados, ejemplos visuales few-shot), alcanzando un 90% de precisión de clasificación y grafos estructuralmente válidos en el 90,2% de los planos.</li>
+            <li class="zh">设计了六阶段提示词工程策略（角色设定、有序决策程序、少样本视觉示例），实现 90% 的分类准确率，并为 90.2% 的户型图生成结构有效的拓扑图。</li>
+            <li class="en">Devised an annotation-free validation framework and a persistent-memory human-in-the-loop refinement system, correcting mis-extractions without weight updates.</li>
+            <li class="es">Ideé un marco de validación sin anotaciones y un sistema de refinamiento human-in-the-loop con memoria persistente, corrigiendo extracciones erróneas sin actualizar pesos.</li>
+            <li class="zh">设计了免标注的验证框架和带有持久化内存的"人机协同 (human-in-the-loop)"优化系统，在不更新模型权重的情况下自动纠正提取异常。</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Qwen3-VL</span><span class="tag">VLMs</span><span class="tag">Prompt Engineering</span><span class="tag">PyTorch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">gen-ai</div>
+        <div>
+          <h3>
+            <a href="https://github.com/hangui11/STGF-LLM" target="_blank" rel="noopener">
+              <span class="en">STGF-LLM: Time-Series Forecasting &amp; Synthetic Generation with LLMs</span>
+              <span class="es">STGF-LLM: Previsión y Generación Sintética de Series Temporales con LLMs</span>
+              <span class="zh">STGF-LLM：基于大语言模型的时间序列预测与合成数据生成</span>
+              <span class="ext">↗</span>
+            </a>
+          </h3>
+          <ul>
+            <li class="en">Engineered a unified framework fine-tuning a Large Language Model (Qwen3) for robust time-series forecasting and high-fidelity synthetic data generation.</li>
+            <li class="es">Desarrollé un framework unificado de fine-tuning de un LLM (Qwen3) para una previsión de series temporales robusta y la generación de datos sintéticos de alta fidelidad.</li>
+            <li class="zh">开发了一个统一框架，通过微调大语言模型 (Qwen3) 实现稳健的时间序列预测与高保真合成数据生成。</li>
+            <li class="en">Designed a "history-aware prompting" strategy to serialize multivariate temporal data, mitigating token-length bottlenecks to capture complex semantic patterns and seasonal fluctuations.</li>
+            <li class="es">Diseñé una estrategia de «history-aware prompting» para serializar datos temporales multivariantes, mitigando los cuellos de botella de longitud de tokens y capturando patrones semánticos y fluctuaciones estacionales.</li>
+            <li class="zh">设计了"历史感知 (history-aware)"序列化提示策略，有效缓解 Token 长度瓶颈，捕获多变量时序数据中复杂的语义模式与季节性波动。</li>
+            <li class="en">Benchmarked against state-of-the-art Deep Generative Models (TimeGAN, Chronos-T5), achieving competitive Train-on-Synthetic-Test-on-Real (TSTR) accuracy within hardware constraints.</li>
+            <li class="es">Comparé con modelos generativos profundos de vanguardia (TimeGAN, Chronos-T5), logrando una precisión TSTR (Train-on-Synthetic-Test-on-Real) competitiva dentro de las restricciones de hardware.</li>
+            <li class="zh">与最先进的深度生成模型 (TimeGAN, Chronos-T5) 进行基准测试，在硬件限制下实现了极具竞争力的 TSTR (Train-on-Synthetic-Test-on-Real) 准确率。</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Qwen3</span><span class="tag">LLMs</span><span class="tag">Generative AI</span><span class="tag">Time-Series</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">mlops</div>
+        <div>
+          <h3>
+            <a href="https://github.com/hangui11/Steam-Games-Satisfaction" target="_blank" rel="noopener">
+              <span class="en">Steam Games Satisfaction Prediction — MLOps Pipeline</span>
+              <span class="es">Predicción de Satisfacción en Steam — Pipeline MLOps</span>
+              <span class="zh">Steam 游戏满意度预测——MLOps 流水线</span>
+              <span class="ext">↗</span>
+            </a>
+          </h3>
+          <ul>
+            <li class="en">Executed comprehensive data profiling and PCA feature selection on 150k+ API records, designing a custom Neural Network to capture non-linear relationships and maximize predictive R².</li>
+            <li class="es">Ejecuté perfilado de datos y selección de variables con PCA sobre más de 150.000 registros de API, diseñando una red neuronal a medida para capturar relaciones no lineales y maximizar el R² predictivo.</li>
+            <li class="zh">对超过 15 万条 API 记录执行全面的数据分析与 PCA 特征选择，设计定制化神经网络以捕获非线性关系、最大化预测 R² 得分。</li>
+            <li class="en">Architected an MLOps pipeline applying DuckDB across transformation stages for complete data lineage and instant rollback, with robust error handling during model training.</li>
+            <li class="es">Diseñé un pipeline MLOps aplicando DuckDB en las etapas de transformación para un linaje de datos completo y reversión instantánea de estado, con un manejo de errores robusto durante el entrenamiento.</li>
+            <li class="zh">架构了 MLOps 流水线，在数据转换各阶段应用 DuckDB 以保证完整的数据血缘 (Data Lineage) 和即时状态回滚，训练阶段具备健壮的错误处理能力。</li>
+            <li class="en">Developed a custom UI for automated execution, process monitoring and dynamic result visualization.</li>
+            <li class="es">Desarrollé una interfaz personalizada para la ejecución automatizada, la monitorización de procesos y la visualización dinámica de resultados.</li>
+            <li class="zh">开发定制化 UI 用于自动化执行、流程监控和结果的动态可视化。</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">MLOps</span><span class="tag">DuckDB</span><span class="tag">PCA</span><span class="tag">PyTorch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="educacion">
+      <h2><span class="cmt">--</span> <span class="en">education</span><span class="es">educación</span><span class="zh">教育背景</span></h2>
+
+      <div class="entry">
+        <div class="when">2025.09 – 2026.01</div>
+        <div>
+          <h3>
+            <span class="en">Exchange Student (Master's)</span><span class="es">Estudiante de Intercambio (Máster)</span><span class="zh">硕士交换生</span>
+            <span class="grade">86/100</span>
+          </h3>
+          <p class="org"><span class="en">Beihang University · Beijing · China's top-10 in engineering</span><span class="es">Universidad de Beihang · Pekín · top-10 de China en ingeniería</span><span class="zh">北京航空航天大学 · 北京</span></p>
+          <ul>
+            <li class="en">Coursework: Data Mining, Foundation Models, Information Retrieval.</li>
+            <li class="es">Asignaturas: Minería de Datos, Modelos Fundacionales, Recuperación de Información.</li>
+            <li class="zh">核心课程：数据挖掘、基础大模型 (Foundation Models)、信息检索。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2024.09 – 2026.06</div>
+        <div>
+          <h3>
+            <span class="en">Master in Data Science</span><span class="es">Máster en Data Science</span><span class="zh">数据科学硕士</span>
+            <span class="grade">7.6/10<span class="en"> · Spanish 0–10 scale</span><span class="zh"> · 西班牙10分制</span></span>
+          </h3>
+          <p class="org"><span class="en">Universitat Politècnica de Catalunya (UPC)</span><span class="es">Universitat Politècnica de Catalunya (UPC)</span><span class="zh">加泰罗尼亚理工大学 (UPC) · QS 工程与技术全球第96</span></p>
+          <ul>
+            <li class="en">Thesis: Vision-Language Models (VLM) for Graph Extraction.</li>
+            <li class="es">TFM: Modelos de Visión y Lenguaje (VLM) para Extracción de Grafos.</li>
+            <li class="zh">毕业论文：基于视觉语言模型 (VLM) 的图结构提取。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2020.09 – 2024.06</div>
+        <div>
+          <h3>
+            <span class="en">Bachelor in Computer Science</span><span class="es">Grado en Ingeniería Informática</span><span class="zh">计算机科学学士</span>
+            <span class="grade">7.3/10</span>
+          </h3>
+          <p class="org"><span class="en">Universitat Politècnica de Catalunya (UPC)</span><span class="es">Universitat Politècnica de Catalunya (UPC)</span><span class="zh">加泰罗尼亚理工大学 (UPC)</span></p>
+          <ul>
+            <li class="en">Thesis: State-of-the-art Recommender Systems (Collaborative Filtering &amp; Deep Learning).</li>
+            <li class="es">TFG: Sistemas de Recomendación (Filtrado Colaborativo y Deep Learning).</li>
+            <li class="zh">毕业论文：前沿推荐系统研究（协同过滤与深度学习）。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2><span class="cmt">--</span> <span class="en">skills &amp; languages</span><span class="es">habilidades e idiomas</span><span class="zh">专业技能与语言</span></h2>
+
+      <div class="skillrow">
+        <div class="k"><span class="en">data eng</span><span class="es">ing. de datos</span><span class="zh">数据工程</span></div>
+        <div class="tags">
+          <span class="tag">Apache Spark</span><span class="tag">Apache Airflow</span><span class="tag">Docker</span>
+          <span class="tag">DuckDB</span><span class="tag">Delta Lake</span><span class="tag">ETL Pipelines</span><span class="tag">MLOps</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="k"><span class="en">data science</span><span class="es">ciencia de datos</span><span class="zh">数据科学</span></div>
+        <div class="tags">
+          <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Pandas</span><span class="tag">Scikit-Learn</span>
+          <span class="tag">LLMs</span><span class="tag">VLMs</span><span class="tag">Generative AI</span><span class="tag">PCA</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="k"><span class="en">analysis &amp; BI</span><span class="es">análisis y BI</span><span class="zh">分析与 BI</span></div>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Time-Series Forecasting</span><span class="tag">Data Visualization</span>
+          <span class="tag"><span class="en">Relational Databases</span><span class="es">Bases de Datos Relacionales</span><span class="zh">关系型数据库</span></span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="k"><span class="en">software eng</span><span class="es">ing. de software</span><span class="zh">软件工程</span></div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">REST APIs</span>
+          <span class="tag"><span class="en">Microservices</span><span class="es">Microservicios</span><span class="zh">微服务</span></span>
+          <span class="tag">JUnit</span><span class="tag">GitHub Actions</span><span class="tag">Git</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="k"><span class="en">languages</span><span class="es">idiomas</span><span class="zh">语言能力</span></div>
+        <div class="tags">
+          <span class="tag lang"><b><span class="en">Chinese</span><span class="es">Chino</span><span class="zh">中文</span></b>&nbsp;· <span class="en">native</span><span class="es">nativo</span><span class="zh">母语</span></span>
+          <span class="tag lang"><b><span class="en">Spanish</span><span class="es">Español</span><span class="zh">西班牙语</span></b>&nbsp;· <span class="en">fluent</span><span class="es">fluido</span><span class="zh">流利</span></span>
+          <span class="tag lang"><b><span class="en">Catalan</span><span class="es">Catalán</span><span class="zh">加泰罗尼亚语</span></b>&nbsp;· <span class="en">fluent</span><span class="es">fluido</span><span class="zh">流利</span></span>
+          <span class="tag lang"><b><span class="en">English</span><span class="es">Inglés</span><span class="zh">英语</span></b>&nbsp;· <span class="en">fluent</span><span class="es">fluido</span><span class="zh">流利</span></span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Hang Yao</span>
+      <span class="en">extract → transform → load → served with care</span>
+      <span class="es">extract → transform → load → servir con cariño</span>
+      <span class="zh">extract → transform → load → 用心交付</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    /* ---- language toggle ---- */
+    var lbtns = {
+      en: document.getElementById("lang-en"),
+      es: document.getElementById("lang-es"),
+      zh: document.getElementById("lang-zh")
+    };
+    var titles = {
+      en: "Hang Yao — Data Engineer & Scientist",
+      es: "Hang Yao — Data Engineer & Scientist",
+      zh: "姚航 — 数据工程师 / 数据科学家"
+    };
+    function setLang(l) {
+      root.dataset.lang = l;
+      for (var k in lbtns) lbtns[k].setAttribute("aria-pressed", String(k === l));
+      document.title = titles[l];
+      document.documentElement.lang = (l === "zh") ? "zh-CN" : l;
+      try { localStorage.setItem("cv-lang", l); } catch (e) {}
+    }
+    lbtns.en.addEventListener("click", function () { setLang("en"); });
+    lbtns.es.addEventListener("click", function () { setLang("es"); });
+    lbtns.zh.addEventListener("click", function () { setLang("zh"); });
+    setLang(lbtns[root.dataset.lang] ? root.dataset.lang : "en");
+
+    /* ---- scrollspy ---- */
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll(".rail nav a"));
+    var linkById = {};
+    navLinks.forEach(function (a) { linkById[a.getAttribute("href").slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && linkById[e.target.id]) {
+          navLinks.forEach(function (a) { a.classList.remove("active"); });
+          linkById[e.target.id].classList.add("active");
+        }
+      });
+    }, { rootMargin: "-35% 0px -60% 0px" });
+    ["perfil", "experiencia", "proyectos", "educacion", "habilidades"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+
+    /* ---- theme toggle ---- */
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var dark = root.dataset.theme ? root.dataset.theme === "dark" : mq.matches;
+      root.dataset.theme = dark ? "light" : "dark";
+      repaint();
+    });
+
+    /* ---- pipeline canvas ---- */
+    var canvas = document.getElementById("pipe");
+    var ctx = canvas.getContext("2d");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var NODES = ["APIs", "Spark", "DuckDB", "Dashboard"];
+    var particles = [];
+    var W = 0, H = 0, dpr = 1, colors = {};
+
+    function readColors() {
+      var s = getComputedStyle(root);
+      colors = {
+        line: s.getPropertyValue("--line").trim(),
+        muted: s.getPropertyValue("--muted").trim(),
+        accent: s.getPropertyValue("--accent").trim(),
+        accent2: s.getPropertyValue("--accent-2").trim()
+      };
+    }
+
+    function resize() {
+      dpr = window.devicePixelRatio || 1;
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function nodeX(i) {
+      var pad = Math.max(56, W * 0.09);
+      return pad + (W - pad * 2) * (i / (NODES.length - 1));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      var y = H / 2 - 6;
+      ctx.strokeStyle = colors.line;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(nodeX(0), y);
+      ctx.lineTo(nodeX(NODES.length - 1), y);
+      ctx.stroke();
+
+      for (var p of particles) {
+        ctx.fillStyle = p.hot ? colors.accent2 : colors.accent;
+        ctx.globalAlpha = p.a;
+        ctx.beginPath();
+        ctx.arc(p.x, y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      ctx.font = "10.5px ui-monospace, Consolas, monospace";
+      ctx.textAlign = "center";
+      for (var i = 0; i < NODES.length; i++) {
+        var x = nodeX(i);
+        ctx.fillStyle = colors.accent;
+        ctx.strokeStyle = colors.muted;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(x, y, 8, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle = colors.muted;
+        ctx.fillText(NODES[i], x, y + 28);
+      }
+    }
+
+    function step() {
+      var x0 = nodeX(0), x1 = nodeX(NODES.length - 1);
+      if (Math.random() < 0.06 && particles.length < 26) {
+        particles.push({ x: x0, r: 1.5 + Math.random() * 1.5, v: 0.6 + Math.random() * 1.1, a: 0.9, hot: Math.random() < 0.18 });
+      }
+      for (var p of particles) { p.x += p.v; if (p.x > x1 - 12) p.a -= 0.06; }
+      particles = particles.filter(function (p) { return p.a > 0; });
+      draw();
+      requestAnimationFrame(step);
+    }
+
+    function repaint() { readColors(); draw(); }
+
+    resize(); readColors();
+    window.addEventListener("resize", function () { resize(); draw(); });
+    mq.addEventListener("change", repaint);
+    new MutationObserver(repaint).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+
+    if (reduced) {
+      var x0 = nodeX(0), x1 = nodeX(NODES.length - 1);
+      for (var i = 1; i <= 5; i++) particles.push({ x: x0 + (x1 - x0) * i / 6, r: 2, v: 0, a: 0.8, hot: i === 3 });
+      draw();
+    } else {
+      step();
+    }
+  })();
+</script>
+
+</body>
+</html>
