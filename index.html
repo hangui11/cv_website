@@ -119,8 +119,6 @@
 
   .lead { margin: 0; max-width: 62ch; color: var(--ink); }
 
-  .now { display: flex; align-items: baseline; gap: 10px; margin: 18px 0 0; max-width: 62ch; font-size: 0.86rem; color: var(--muted); border-left: 2px solid var(--accent-2); padding-left: 12px; }
-  .now-k { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-2); flex: none; }
 
   /* project figures */
   figure.shot { margin: 12px 0 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
@@ -151,7 +149,6 @@
   .entry h3 a { color: var(--ink); } .entry h3 a:hover { color: var(--accent); text-decoration: none; }
   .entry h3 .ext { font-family: var(--mono); color: var(--accent); font-size: 0.85em; }
   .entry .org { color: var(--muted); font-size: 0.85rem; margin: 0 0 8px; }
-  .grade { font-family: var(--mono); font-size: 0.68rem; color: var(--accent-2); border: 1px solid var(--accent-2); border-radius: 3px; padding: 0 6px; margin-left: 6px; white-space: nowrap; }
   .entry ul { margin: 6px 0 0; padding-left: 17px; display: flex; flex-direction: column; gap: 5px; max-width: 62ch; }
   .entry li { font-size: 0.9rem; } .entry li::marker { color: var(--accent); }
   .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
@@ -272,9 +269,9 @@
 
     <section>
       <div class="h2"><span class="en">profile</span><span class="es">perfil</span><span class="zh">个人总结</span></div>
-      <p class="lead en">Results-driven data professional across the full data lifecycle — from scalable architectures and ETL pipelines to predictive modeling with foundation models (LLMs/VLMs) and applied analytics. I design end-to-end data solutions and take complex ML workflows to production with Spark, Airflow, DuckDB and PyTorch, backed by enterprise software engineering experience at NTT DATA.</p>
-      <p class="lead es">Profesional de datos orientado a resultados en todo el ciclo de vida del dato — de arquitecturas escalables y pipelines ETL al modelado predictivo con modelos fundacionales (LLMs/VLMs) y analítica aplicada. Diseño soluciones de datos de extremo a extremo y llevo flujos de ML complejos a producción con Spark, Airflow, DuckDB y PyTorch, respaldado por experiencia en NTT DATA.</p>
-      <p class="lead zh">结果导向的数据全栈人才，覆盖数据全生命周期——从可扩展架构与 ETL 流水线，到基于基础大模型 (LLMs/VLMs) 的预测建模与应用分析。使用 Spark、Airflow、DuckDB 和 PyTorch 设计端到端数据方案并将复杂 ML 工作流推向生产，辅以 NTT DATA 的企业级软件工程经验。</p>
+      <p class="lead en">Data &amp; Software Engineer with a BSc in Computer Science and an MSc in Data Science, plus enterprise experience at NTT DATA building production microservices for a banking client. Comfortable across the full development lifecycle — REST APIs, relational databases, automated testing and CI/CD in an agile team — and across modern data work, from scalable pipelines and cloud warehouses to machine learning and AI systems. Strong on turning complex problems into reliable, deployed solutions, with a habit of validating and measuring what I build.</p>
+      <p class="lead es">Ingeniero de Datos y Software con un Grado en Ingeniería Informática y un Máster en Data Science, además de experiencia empresarial en NTT DATA construyendo microservicios en producción para un cliente bancario. Me muevo con soltura en todo el ciclo de desarrollo — APIs REST, bases de datos relacionales, testing automatizado y CI/CD en un equipo ágil — y en el trabajo de datos moderno, desde pipelines escalables y data warehouses en cloud hasta machine learning y sistemas de IA. Fuerte en convertir problemas complejos en soluciones fiables y desplegadas, con la costumbre de validar y medir lo que construyo.</p>
+      <p class="lead zh">数据与软件工程师，拥有计算机科学学士与数据科学硕士学位，并在 NTT DATA 为银行客户构建生产级微服务。熟悉完整开发生命周期——REST API、关系型数据库、自动化测试与 CI/CD，敏捷团队协作——同时覆盖现代数据工作，从可扩展流水线与云数据仓库到机器学习与 AI 系统。擅长把复杂问题转化为可靠、可部署的方案，并习惯于验证和度量自己构建的东西。</p>
 
       <div class="stats">
         <div class="stat"><b>90.2%</b><span class="en">structurally valid VLM outputs</span><span class="es">salidas VLM válidas</span><span class="zh">VLM 结构化有效输出</span></div>
@@ -282,8 +279,6 @@
         <div class="stat"><b>10 GB</b><span class="en">heterogeneous data integrated</span><span class="es">datos integrados</span><span class="zh">集成的多源数据</span></div>
         <div class="stat"><b>~90%</b><span class="en">test coverage sustained</span><span class="es">cobertura de tests</span><span class="zh">测试覆盖率</span></div>
       </div>
-
-      <p class="now"><span class="now-k">now</span><span class="en">Building a project on experimentation — A/B analysis + dbt modeling + an LLM agent.</span><span class="es">Construyendo un proyecto de experimentación — análisis A/B + modelado con dbt + un agente LLM.</span><span class="zh">正在做一个实验分析项目——A/B 分析 + dbt 数据建模 + LLM agent。</span></p>
     </section>
 
     <section>
@@ -293,17 +288,20 @@
         <h3><span class="en">Back-End Engineer Intern</span><span class="es">Ingeniero Back-End (Prácticas)</span><span class="zh">后端开发工程师（实习）</span></h3>
         <p class="org">NTT DATA · <span class="en">Barcelona · NTT Group (Fortune Global 500)</span><span class="es">Barcelona · Grupo NTT (Fortune Global 500)</span><span class="zh">巴塞罗那 · 世界500强 NTT 集团旗下</span></p>
         <ul>
-          <li class="en">Built enterprise-grade microservices and state-driven workflows on Spring to securely route and process financial records for a major banking client.</li>
-          <li class="es">Desarrollé microservicios de nivel empresarial y flujos basados en estados con Spring para procesar de forma segura registros financieros de un gran cliente bancario.</li>
-          <li class="zh">使用 Spring 生态开发企业级微服务与状态驱动的工作流，为大型银行客户安全地路由和处理金融记录。</li>
-          <li class="en">Mapped UI states to custom relational schemas with advanced SQL integrations for fast, reliable data persistence.</li>
-          <li class="es">Mapeé estados de interfaz a esquemas relacionales a medida con integraciones SQL avanzadas para una persistencia rápida y fiable.</li>
-          <li class="zh">将 UI 状态映射至定制关系型数据库架构，执行高级 SQL 集成以确保高效可靠的数据持久化。</li>
-          <li class="en">Orchestrated end-to-end delivery via GitHub Actions, resolving production bugs and sustaining ~90% unit-test coverage with JUnit.</li>
-          <li class="es">Orquesté la entrega con GitHub Actions, resolviendo bugs de producción y manteniendo ~90% de cobertura de tests con JUnit.</li>
-          <li class="zh">通过 GitHub Actions 编排端到端交付，解决生产环境 Bug，并用 JUnit 将核心模块测试覆盖率维持在约 90%。</li>
+          <li class="en">Developed enterprise-grade microservices and state-driven workflows with the Spring ecosystem to securely route and process financial records for a major banking client, working across design, development, delivery and maintenance.</li>
+          <li class="es">Desarrollé microservicios de nivel empresarial y flujos basados en estados con el ecosistema Spring para encaminar y procesar de forma segura registros financieros de un gran cliente bancario, participando en diseño, desarrollo, entrega y mantenimiento.</li>
+          <li class="zh">使用 Spring 生态开发企业级微服务与状态驱动的工作流，为大型银行客户安全地路由和处理金融记录，参与设计、开发、交付与维护全过程。</li>
+          <li class="en">Designed and consumed REST APIs between services, modelling application state onto custom relational database schemas to guarantee reliable data persistence.</li>
+          <li class="es">Diseñé y consumí APIs REST entre servicios, modelando el estado de la aplicación sobre esquemas relacionales a medida para garantizar una persistencia de datos fiable.</li>
+          <li class="zh">设计并调用服务间的 REST API，将应用状态建模到定制的关系型数据库架构上，确保可靠的数据持久化。</li>
+          <li class="en">Wrote and maintained unit tests with JUnit, sustaining ~90% coverage on core modules, and set up CI/CD pipelines with GitHub Actions; diagnosed and resolved production incidents under strict financial-data compliance.</li>
+          <li class="es">Escribí y mantuve tests unitarios con JUnit, sosteniendo ~90% de cobertura en los módulos principales, y monté pipelines de CI/CD con GitHub Actions; diagnostiqué y resolví incidencias de producción bajo estrictos requisitos de cumplimiento con datos financieros.</li>
+          <li class="zh">使用 JUnit 编写并维护单元测试，核心模块覆盖率维持在约 90%，并用 GitHub Actions 搭建 CI/CD 流水线；在严格的金融数据合规要求下诊断并解决生产事故。</li>
+          <li class="en">Worked in an agile team with code review and version control (Git), and modernised legacy multi-layer frameworks without disrupting existing functionality.</li>
+          <li class="es">Trabajé en un equipo ágil con revisión de código y control de versiones (Git), y modernicé frameworks heredados multicapa sin afectar la funcionalidad existente.</li>
+          <li class="zh">在敏捷团队中工作，采用代码评审与版本控制 (Git)，并在不影响现有功能的前提下升级遗留的多层框架。</li>
         </ul>
-        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">SQL</span><span class="tag">JUnit</span><span class="tag">GitHub Actions</span></div>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">REST APIs</span><span class="tag">SQL</span><span class="tag">JUnit</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span></div>
       </div>
     </section>
 
@@ -322,6 +320,20 @@
           <li class="zh">在 Amazon Reviews 与 SAMSum 上与 TextRank、BART 基线对比，采用 ROUGE 及 LLM-as-a-Judge 评估；RAG 得 9/10，能综合矛盾观点，而基线会产生幻觉。</li>
         </ul>
         <div class="tags"><span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">Hugging Face</span><span class="tag">Qwen3</span><span class="tag">Sentence-Transformers</span></div>
+      </div>
+
+      <div class="entry">
+        <div class="when">cloud · streaming</div>
+        <h3><a href="https://github.com/hangui11/Event-Platform-Analytics" target="_blank" rel="noopener"><span class="en">Event Analytics Platform (streaming ingestion to cloud warehouse)</span><span class="es">Plataforma de Analítica de Eventos (ingesta en streaming a data warehouse)</span><span class="zh">事件分析平台（流式接入云数仓）</span> <span class="ext">↗</span></a></h3>
+        <ul>
+          <li class="en">Designed and deployed two services end to end on Cloud Run: a Node.js/Express ingestion API that validates, enriches and publishes incoming events to Pub/Sub, and a Python/FastAPI analytics API serving metrics over HTTP from BigQuery.</li>
+          <li class="es">Diseñé y desplegué dos servicios de extremo a extremo en Cloud Run: una API de ingesta en Node.js/Express que valida, enriquece y publica los eventos entrantes en Pub/Sub, y una API analítica en Python/FastAPI que sirve métricas por HTTP desde BigQuery.</li>
+          <li class="zh">在 Cloud Run 上端到端设计并部署两个服务：Node.js/Express 接入 API 负责校验、丰富并将事件发布到 Pub/Sub；Python/FastAPI 分析 API 通过 HTTP 从 BigQuery 提供指标。</li>
+          <li class="en">Built in reliability and cost controls: rejected malformed records at the edge, deduplicated at-least-once deliveries at query time, and added caching plus pre-aggregation that cut a representative query from ~3 MB scanned to ~2.4 KB.</li>
+          <li class="es">Incorporé controles de fiabilidad y coste: rechazo de registros malformados en el borde, deduplicación de entregas at-least-once en la consulta, y caché más preagregación que redujeron una consulta representativa de ~3 MB escaneados a ~2,4 KB.</li>
+          <li class="zh">内建可靠性与成本控制：在入口拒绝格式错误的记录，在查询阶段对 at-least-once 重复投递去重，并通过缓存与预聚合把一条代表性查询从约 3 MB 扫描量降到约 2.4 KB。</li>
+        </ul>
+        <div class="tags"><span class="tag">GCP</span><span class="tag">Pub/Sub</span><span class="tag">BigQuery</span><span class="tag">Cloud Run</span><span class="tag">FastAPI</span><span class="tag">Node.js</span></div>
       </div>
 
       <div class="entry">
@@ -450,17 +462,17 @@
       <div class="h2"><span class="en">education</span><span class="es">educación</span><span class="zh">教育背景</span></div>
       <div class="entry">
         <div class="when">2025.09 – 2026.01</div>
-        <h3><span class="en">Exchange Student (Master's)</span><span class="es">Estudiante de Intercambio (Máster)</span><span class="zh">硕士交换生</span><span class="grade">86/100</span></h3>
+        <h3><span class="en">Exchange Student (Master's)</span><span class="es">Estudiante de Intercambio (Máster)</span><span class="zh">硕士交换生</span></h3>
         <p class="org"><span class="en">Beihang University · Beijing · China's top-10 in engineering</span><span class="es">Universidad de Beihang · Pekín · top-10 de China en ingeniería</span><span class="zh">北京航空航天大学 · 北京</span></p>
       </div>
       <div class="entry">
         <div class="when">2024.09 – 2026.06</div>
-        <h3><span class="en">MSc Data Science</span><span class="es">Máster en Data Science</span><span class="zh">数据科学硕士</span><span class="grade">7.6/10<span class="en"> · ES scale</span><span class="zh"> · 西班牙制</span></span></h3>
+        <h3><span class="en">MSc Data Science</span><span class="es">Máster en Data Science</span><span class="zh">数据科学硕士</span></h3>
         <p class="org">Universitat Politècnica de Catalunya (UPC)<span class="en"> · QS Eng. &amp; Tech. #96</span><span class="zh"> · QS 工程与技术全球第96</span></p>
       </div>
       <div class="entry">
         <div class="when">2020.09 – 2024.06</div>
-        <h3><span class="en">BSc Computer Science</span><span class="es">Grado en Ingeniería Informática</span><span class="zh">计算机科学学士</span><span class="grade">7.3/10</span></h3>
+        <h3><span class="en">BSc Computer Science</span><span class="es">Grado en Ingeniería Informática</span><span class="zh">计算机科学学士</span></h3>
         <p class="org">Universitat Politècnica de Catalunya (UPC)</p>
       </div>
     </section>
@@ -471,7 +483,7 @@
       <div class="skillrow"><div class="k"><span class="en">ml / ai</span><span class="es">ml / ia</span><span class="zh">机器学习</span></div><div class="tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Scikit-Learn</span><span class="tag">Hugging Face</span><span class="tag">FAISS</span><span class="tag">LLMs</span><span class="tag">VLMs</span><span class="tag">RAG</span><span class="tag">PCA</span></div></div>
       <div class="skillrow"><div class="k"><span class="en">data eng</span><span class="es">ing. datos</span><span class="zh">数据工程</span></div><div class="tags"><span class="tag">Spark</span><span class="tag">Airflow</span><span class="tag">GCP · BigQuery</span><span class="tag">Pub/Sub</span><span class="tag">DuckDB</span><span class="tag">Delta Lake</span><span class="tag">ETL</span><span class="tag">MLOps</span></div></div>
       <div class="skillrow"><div class="k"><span class="en">backend / web</span><span class="es">backend / web</span><span class="zh">后端 / 前端</span></div><div class="tags"><span class="tag">Spring Boot</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Vue.js</span><span class="tag">REST APIs</span><span class="tag">Microservices</span></div></div>
-      <div class="skillrow"><div class="k"><span class="en">databases</span><span class="es">bases de datos</span><span class="zh">数据库</span></div><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">SQL</span><span class="tag">Redis</span><span class="tag">DuckDB</span></div></div>
+      <div class="skillrow"><div class="k"><span class="en">databases</span><span class="es">bases de datos</span><span class="zh">数据库</span></div><div class="tags"><span class="tag">SQL</span><span class="tag">Relational DBs</span><span class="tag">Redis</span><span class="tag">DuckDB</span><span class="tag">BigQuery</span></div></div>
       <div class="skillrow"><div class="k"><span class="en">tools</span><span class="es">herramientas</span><span class="zh">工具</span></div><div class="tags"><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">JUnit</span><span class="tag">Agile</span></div></div>
       <div class="skillrow"><div class="k"><span class="en">bi / stats</span><span class="es">bi / estad.</span><span class="zh">BI / 统计</span></div><div class="tags"><span class="tag">Tableau</span><span class="tag">FactoMineR</span><span class="tag">ggplot2</span><span class="tag">tidyverse</span><span class="tag">Time-Series</span></div></div>
       <div class="skillrow"><div class="k"><span class="en">spoken</span><span class="es">idiomas</span><span class="zh">语言</span></div><div class="tags"><span class="tag"><span class="en">Chinese · native</span><span class="es">Chino · nativo</span><span class="zh">中文 · 母语</span></span><span class="tag"><span class="en">English · fluent</span><span class="es">Inglés · fluido</span><span class="zh">英语 · 流利</span></span><span class="tag"><span class="en">Spanish · fluent</span><span class="es">Español · fluido</span><span class="zh">西班牙语 · 流利</span></span><span class="tag"><span class="en">Catalan · fluent</span><span class="es">Catalán · fluido</span><span class="zh">加泰罗尼亚语 · 流利</span></span></div></div>
@@ -550,82 +562,122 @@
   var input = document.getElementById("input");
   var send = document.getElementById("send");
 
-  // Local knowledge base: {matchers:[...], answer:{en,es,zh}, src?}
-  var KB = [
-    { k: ["a/b", "ab test", "experiment", "experimento", "实验", "ab测试"], src: null,
-      a: { en: "Honestly — I haven't run production A/B tests in a job yet. But I've built the statistical foundation for it: hypothesis testing, PCA, and a validation framework in my thesis that automatically checks outputs rather than trusting them. I'm currently building a project on experimentation (A/B analysis + dbt + an agent) to close exactly this gap.",
-          es: "Con sinceridad: aún no he hecho A/B testing en producción en un trabajo. Pero tengo la base estadística: contraste de hipótesis, PCA y un marco de validación en mi tesis que verifica los resultados automáticamente. Ahora construyo un proyecto de experimentación (A/B + dbt + un agente) para cerrar justo esta brecha.",
-          zh: "老实说，我还没在工作中做过生产级 A/B 测试。但我有统计基础：假设检验、PCA，以及论文里自动校验输出的验证框架。我正在做一个实验分析项目（A/B + dbt + agent）来补齐这一块。" } },
-    { k: ["vlm", "floor plan", "thesis", "tesis", "论文", "户型", "vision"], src: {t:"floorplan-graph-vlm", u:"https://github.com/hangui11/floorplan-graph-vlm"},
-      a: { en: "My master's thesis. I built an annotation-free pipeline that turns 1,276 raster floor plans into structured topological graphs using a frozen vision-language model (Qwen3-VL-8B) — no fine-tuning, no labelled data. A six-stage prompting strategy hit 90% classification accuracy, and an automated validation framework plus human-in-the-loop refinement got structurally valid graphs for 90.2% of plans.",
-          es: "Mi tesis de máster. Un pipeline sin anotaciones que convierte 1.276 planos ráster en grafos topológicos con un VLM congelado (Qwen3-VL-8B), sin fine-tuning ni etiquetas. Una estrategia de prompting en seis etapas alcanzó 90% de precisión, y un marco de validación con refinamiento human-in-the-loop logró grafos válidos en el 90,2% de los planos.",
-          zh: "我的硕士论文。用冻结的视觉语言模型 (Qwen3-VL-8B) 把 1,276 张户型图转成结构化拓扑图，无需微调或标注。六阶段提示策略达 90% 分类准确率，自动验证框架加人机协同修正使 90.2% 户型图结构有效。" } },
-    { k: ["rag", "retrieval", "summariz", "review", "faiss", "embedding", "检索", "摘要", "评论"], src: {t:"RAG-Review-Summarizer", u:"https://github.com/hangui11/RAG-Review-Summarizer"},
-      a: { en: "A Retrieval-Augmented Generation (RAG) pipeline that answers query-focused questions over large-scale e-commerce reviews. It uses sentence-transformers embeddings and FAISS dense retrieval to feed a 4-bit quantized Qwen3-4B-Instruct generator. I benchmarked it against TextRank and BART with ROUGE and an LLM-as-a-Judge protocol — RAG scored 9/10, accurately synthesizing conflicting opinions where the baselines hallucinated.",
-          es: "Un pipeline RAG que responde preguntas específicas sobre reseñas de e-commerce a gran escala. Usa embeddings con sentence-transformers y recuperación densa con FAISS para alimentar un generador Qwen3-4B-Instruct cuantizado a 4-bit. Lo comparé con TextRank y BART usando ROUGE y un protocolo LLM-as-a-Judge — RAG obtuvo 9/10, sintetizando opiniones contradictorias donde los baselines alucinaban.",
-          zh: "一个检索增强生成 (RAG) 流水线，针对大规模电商评论回答具体问题。用 sentence-transformers 向量和 FAISS 稠密检索，喂入 4-bit 量化的 Qwen3-4B-Instruct 生成器。与 TextRank、BART 用 ROUGE 及 LLM-as-a-Judge 基准对比——RAG 得 9/10，能综合矛盾观点，而基线会产生幻觉。" } },
-    { k: ["inspection", "full-stack", "fullstack", "web app", "vue", "node", "appwrite", "全栈", "评审", "web"], src: {t:"Software-Inspection-Frontend", u:"https://github.com/hangui11/Software-Inspection-Frontend"},
-      a: { en: "A full-stack collaborative web app for software inspection: users log in, join teams, and review documents submitted by a team leader, with defects and per-member review performance visible to the whole project. I built the Node.js/Express backend and a Vue single-page frontend, using Appwrite for authentication, database, and role-based access control.",
-          es: "Una app web colaborativa full-stack para inspección de software: los usuarios inician sesión, se unen a equipos y revisan documentos de un líder, con defectos y rendimiento por miembro visibles para todo el proyecto. Backend en Node.js/Express y frontend SPA en Vue, con Appwrite para autenticación, base de datos y control de acceso por roles.",
-          zh: "一个全栈协作式软件评审 Web 应用：用户登录、加入团队、评审组长提交的文档，缺陷与每位成员的评审表现对全项目可见。我用 Node.js/Express 构建后端、Vue 单页前端，基于 Appwrite 实现鉴权、数据库与基于角色的访问控制。" } },
-    { k: ["league", "lol", "champion", "multivariate", "r ", "pca", "mds", "英雄联盟", "多元", "统计"], src: {t:"League-of-Legends-Analysis", u:"https://github.com/hangui11/League-of-Legends-Analysis"},
-      a: { en: "A multivariate statistics project in R: I analyzed 167 game characters across base and growth stats, applying PCA, MDS, MCA, cluster and discriminant analysis to recommend the best fit for each role. Delivered as a reproducible R Markdown report with ggplot2/FactoMineR visualizations.",
-          es: "Un proyecto de estadística multivariante en R: analicé 167 personajes según estadísticas base y de crecimiento, aplicando PCA, MDS, MCA, análisis de clústeres y discriminante para recomendar el mejor por rol. Entregado como informe reproducible en R Markdown con visualizaciones ggplot2/FactoMineR.",
-          zh: "一个 R 语言的多元统计项目：分析 167 名角色的基础与成长属性，运用 PCA、MDS、MCA、聚类与判别分析，为每个位置推荐最优角色。交付为可复现的 R Markdown 报告，配 ggplot2/FactoMineR 可视化。" } },
-    { k: ["steam", "mlops", "satisfaction", "satisfacción", "满意度", "neural"], src: {t:"Steam-Games-Satisfaction", u:"https://github.com/hangui11/Steam-Games-Satisfaction"},
-      a: { en: "An end-to-end MLOps pipeline predicting player satisfaction from 150,000+ Steam records. I did profiling and PCA feature selection to find the real drivers, trained a custom neural network to maximize R², and made it operational — DuckDB for data lineage and instant rollback, plus a monitoring UI. It's a system, not a notebook.",
-          es: "Un pipeline MLOps que predice la satisfacción de jugadores desde 150.000+ registros de Steam. Profiling y selección con PCA, una red neuronal a medida para maximizar el R², y operativo — DuckDB para linaje y rollback, con UI de monitorización. Es un sistema, no un notebook.",
-          zh: "一个端到端 MLOps 流水线，从 15 万+ Steam 记录预测玩家满意度。做了数据分析和 PCA 特征选择，训练定制神经网络最大化 R²，并工程化——DuckDB 保证数据血缘与即时回滚，配监控 UI。是系统，不是 notebook。" } },
-    { k: ["stgf", "time series", "forecast", "synthetic", "series temporales", "时序", "时间序列", "合成"], src: {t:"STGF-LLM", u:"https://github.com/hangui11/STGF-LLM"},
-      a: { en: "STGF-LLM: I fine-tuned an LLM (Qwen3) for time-series forecasting and high-fidelity synthetic data generation, with a history-aware prompting strategy to serialize multivariate temporal data. I benchmarked it against TimeGAN and Chronos-T5 on Train-on-Synthetic-Test-on-Real accuracy.",
-          es: "STGF-LLM: fine-tuning de un LLM (Qwen3) para previsión de series temporales y generación sintética de alta fidelidad, con prompting 'history-aware'. Comparado con TimeGAN y Chronos-T5 en precisión TSTR.",
-          zh: "STGF-LLM：微调 LLM (Qwen3) 做时序预测与高保真合成数据生成，设计'历史感知'提示策略序列化多变量时序数据，并与 TimeGAN、Chronos-T5 在 TSTR 准确率上基准测试。" } },
-    { k: ["lakehouse", "spark", "airflow", "big data", "etl", "pipeline", "数据湖", "数据工程"], src: {t:"MDS-BDM", u:"https://github.com/hangui11/MDS-BDM"},
-      a: { en: "My Big Data project: a containerized 3-tier (Cold/Warm/Hot) data lakehouse on Docker, integrating 10 GB of heterogeneous sources through REST APIs with Spark and Redis, and orchestrating daily ETL workflows with Airflow for reliable, high-availability loading.",
-          es: "Mi proyecto de Big Data: un data lakehouse de 3 niveles en Docker, integrando 10 GB de fuentes vía REST APIs con Spark y Redis, y orquestando ETL diario con Airflow para carga fiable y de alta disponibilidad.",
-          zh: "我的大数据项目：Docker 上的三层（冷/温/热）数据湖仓，用 Spark 和 Redis 通过 REST API 集成 10GB 多源数据，Airflow 编排日常 ETL 实现可靠高可用加载。" } },
-    { k: ["ntt", "intern", "experience", "work", "job", "banking", "prácticas", "experiencia", "实习", "工作"], src: null,
-      a: { en: "17 months as a back-end intern at NTT DATA (part of the Fortune Global 500 NTT Group), working for a major banking client. I built enterprise microservices on Spring, wrote advanced SQL against operational data, and sustained ~90% test coverage with CI/CD via GitHub Actions. It taught me the discipline production systems need.",
-          es: "17 meses como becario de back-end en NTT DATA (Grupo NTT, Fortune Global 500), para un gran cliente bancario. Microservicios en Spring, SQL avanzado sobre datos operativos, y ~90% de cobertura con CI/CD vía GitHub Actions.",
-          zh: "在 NTT DATA（世界500强 NTT 集团旗下）做了 17 个月后端实习，服务大型银行客户。用 Spring 构建企业级微服务，对运营数据写高级 SQL，通过 GitHub Actions 的 CI/CD 维持约 90% 测试覆盖率。" } },
-    { k: ["skill", "tech", "stack", "tool", "habilidad", "技能", "技术栈"], src: null,
-      a: { en: "Languages: Python, Java, R, SQL, JavaScript. ML/AI — PyTorch, TensorFlow, Scikit-Learn, Hugging Face, FAISS, LLMs, VLMs, RAG, PCA. Data engineering — Spark, Airflow, GCP (BigQuery, Pub/Sub), DuckDB, Delta Lake, ETL, MLOps. Backend/web — Spring Boot, FastAPI, Node.js, Express, Vue.js, REST APIs, microservices. Databases — PostgreSQL, MongoDB, Redis. Tools — Docker, Git, GitHub Actions, CI/CD, JUnit. BI/stats — Tableau, FactoMineR, ggplot2.",
-          es: "Lenguajes: Python, Java, R, SQL, JavaScript. ML/IA — PyTorch, TensorFlow, Scikit-Learn, Hugging Face, FAISS, LLMs, VLMs, RAG, PCA. Data engineering — Spark, Airflow, GCP (BigQuery, Pub/Sub), DuckDB, Delta Lake, ETL, MLOps. Backend/web — Spring Boot, FastAPI, Node.js, Express, Vue.js, REST APIs, microservicios. Bases de datos — PostgreSQL, MongoDB, Redis. Herramientas — Docker, Git, GitHub Actions, CI/CD, JUnit. BI/estad. — Tableau, FactoMineR, ggplot2.",
-          zh: "语言：Python、Java、R、SQL、JavaScript。ML/AI——PyTorch、TensorFlow、Scikit-Learn、Hugging Face、FAISS、LLMs、VLMs、RAG、PCA。数据工程——Spark、Airflow、GCP (BigQuery、Pub/Sub)、DuckDB、Delta Lake、ETL、MLOps。后端/前端——Spring Boot、FastAPI、Node.js、Express、Vue.js、REST API、微服务。数据库——PostgreSQL、MongoDB、Redis。工具——Docker、Git、GitHub Actions、CI/CD、JUnit。BI/统计——Tableau、FactoMineR、ggplot2。" } },
-    { k: ["language", "chinese", "spanish", "idioma", "语言", "中文", "英语"], src: null,
-      a: { en: "I'm a native Chinese speaker, and fluent in English, Spanish and Catalan. Living in Barcelona for years means Spanish and Catalan are working languages for me, not just conversational — useful for any international team.",
-          es: "Soy hablante nativo de chino, y fluido en inglés, español y catalán. Tras años en Barcelona, español y catalán son lenguas de trabajo para mí.",
-          zh: "我母语是中文，英语、西班牙语、加泰罗尼亚语流利。在巴塞罗那生活多年，西语和加泰语是工作语言而非仅日常对话。" } },
-    { k: ["visa", "permit", "work authorization", "eu", "relocat", "residencia", "签证", "居留", "工签"], src: null,
-      a: { en: "I'm a Chinese national with a Spanish long-term residence and work permit — so I can work in Spain under a local contract with no sponsorship needed. I'm based in Barcelona and open to relocating.",
-          es: "Soy ciudadano chino con residencia de larga duración y permiso de trabajo en España — puedo trabajar con contrato local sin sponsorship. Estoy en Barcelona y abierto a reubicarme.",
-          zh: "我是中国公民，持西班牙长期居留和工作许可——可在西班牙以本地合同工作，无需公司担保。人在巴塞罗那，可考虑搬迁。" } },
-    { k: ["strongest", "best project", "projects", "strength", "overview", "summary", "fit", "good fit", "proyectos", "fuerte", "encaja", "项目", "技能", "适合", "优势", "最强"], src: null,
-      a: { en: "Hang's work spans data engineering, ML/NLP and production software. Highlights: a RAG review-summarizer (FAISS + Qwen, scoring 9/10 vs TextRank/BART baselines); a full-stack software-inspection platform (Node/Express/Vue/Appwrite with role-based access); a VLM thesis turning 1,276 floor plans into structured graphs (90.2% valid, annotation-free); STGF-LLM fine-tuning an LLM for time-series; a Steam MLOps pipeline on 150k+ records; and an end-to-end data lakehouse on Spark/Airflow. Core skills: Python, SQL, Java, R, Spark, Airflow, GCP, FastAPI, PyTorch, Hugging Face, LLMs/VLMs — plus 17 months of production engineering at NTT DATA.",
-          es: "El trabajo de Hang abarca data engineering, ML/NLP y software en producción. Destacados: un resumidor de reseñas RAG (FAISS + Qwen, 9/10 frente a TextRank/BART); una plataforma full-stack de inspección de software (Node/Express/Vue/Appwrite con acceso por roles); una tesis VLM que convierte 1.276 planos en grafos (90,2% válidos); STGF-LLM con fine-tuning para series temporales; un pipeline MLOps de Steam sobre 150k+ registros; y un data lakehouse con Spark/Airflow. Skills: Python, SQL, Java, R, Spark, Airflow, GCP, FastAPI, PyTorch, Hugging Face, LLMs/VLMs, y 17 meses en NTT DATA.",
-          zh: "姚航的工作覆盖数据工程、ML/NLP 与生产级软件。亮点：RAG 评论摘要器（FAISS + Qwen，对比 TextRank/BART 得 9/10）；全栈软件评审平台（Node/Express/Vue/Appwrite，含角色权限）；VLM 论文将 1,276 张户型图转为结构化图（90.2% 有效）；STGF-LLM 微调做时序；Steam MLOps 流水线（15 万+ 记录）；以及基于 Spark/Airflow 的数据湖仓。核心技能：Python、SQL、Java、R、Spark、Airflow、GCP、FastAPI、PyTorch、Hugging Face、LLMs/VLMs，外加 NTT DATA 的 17 个月生产经验。" } },
-    { k: ["why data", "motivation", "por qué", "为什么"], src: null,
-      a: { en: "What I enjoy most is the full path from a messy question to a decision — taking raw data, finding the variables that actually matter, building a model, and knowing how much to trust it. I like data science where the answer becomes a real product decision, not just a report.",
-          es: "Lo que más disfruto es el camino completo de una pregunta confusa a una decisión — datos crudos, encontrar las variables que importan, construir un modelo y saber cuánto fiarme. Me gusta que la respuesta sea una decisión de producto, no un informe.",
-          zh: "我最享受从模糊问题到决策的完整路径——拿原始数据，找出真正重要的变量，建模型，并知道该多信任它。我喜欢答案能变成真实产品决策的数据科学，而不只是一份报告。" } }
-  ];
-
-  var HELP = { en: "Try asking about: my VLM thesis · the Steam MLOps project · time-series work · data engineering · my NTT DATA experience · skills · languages · work permit · why data science. You can also type in Spanish or Chinese.",
-    es: "Prueba a preguntar por: mi tesis VLM · el proyecto Steam MLOps · series temporales · data engineering · mi experiencia en NTT DATA · habilidades · idiomas · permiso de trabajo · por qué data science.",
-    zh: "可以问：我的 VLM 论文 · Steam MLOps 项目 · 时序工作 · 数据工程 · NTT DATA 经历 · 技能 · 语言 · 工作许可 · 为什么做数据科学。也可用中文或西语提问。" };
+  var HELP = { en: "Try asking about: who Hang is · the RAG system · the event analytics platform on Google Cloud · my VLM thesis · the full-stack web app · the Steam MLOps project · time-series work · the R statistics project · data engineering · my NTT DATA experience · education · skills · languages · work permit · availability · contact · this website. You can also type in Spanish or Chinese.",
+    es: "Prueba a preguntar por: quién es Hang · el sistema RAG · la plataforma de analítica de eventos en Google Cloud · mi tesis VLM · la app web full-stack · el proyecto Steam MLOps · series temporales · el proyecto de estadística en R · data engineering · mi experiencia en NTT DATA · estudios · habilidades · idiomas · permiso de trabajo · disponibilidad · contacto · esta web.",
+    zh: "可以问：姚航是谁 · RAG 系统 · Google Cloud 上的事件分析平台 · 我的 VLM 论文 · 全栈 Web 应用 · Steam MLOps 项目 · 时序工作 · R 统计项目 · 数据工程 · NTT DATA 经历 · 教育背景 · 技能 · 语言 · 工作许可 · 到岗时间 · 联系方式 · 这个网站。也可用英文或西语提问。" };
 
   var GREET = { en: "Hi — I answer questions about Hang straight from his CV. Ask me about a project, a skill, or his experience — or tap a suggestion below.",
     es: "Hola — respondo preguntas sobre Hang directamente desde su CV. Pregúntame por un proyecto, una habilidad o su experiencia, o toca una sugerencia.",
     zh: "你好——我基于姚航的简历回答关于他的问题。可以问某个项目、技能或经历，或点下面的建议。" };
 
-  var NOMATCH = { en: "I only answer from Hang's CV, and I don't have that on file — try asking about his projects, skills, experience, or type help for topics.",
-    es: "Solo respondo desde el CV de Hang y no tengo eso — prueba con sus proyectos, habilidades o experiencia, o escribe help.",
-    zh: "我只根据姚航的简历回答，档案里没有这条——可以问他的项目、技能或经历，或输入 help 查看话题。" };
+  var NOMATCH = { en: "I only answer from Hang's CV, and I don't have that on file — try asking about his projects, skills, experience, or type help for topics. For anything else, email hangyao2002@gmail.com.",
+    es: "Solo respondo desde el CV de Hang y no tengo eso — prueba con sus proyectos, habilidades o experiencia, o escribe help. Para cualquier otra cosa, escribe a hangyao2002@gmail.com.",
+    zh: "我只根据姚航的简历回答，档案里没有这条——可以问他的项目、技能或经历，或输入 help 查看话题。其他问题可发邮件至 hangyao2002@gmail.com。" };
+
+  // Local knowledge base (fallback when the model is unavailable): {k: keywords, w?: weight, src, a: {en,es,zh}}.
+  // Keyword rules (see hit()): Latin keywords match whole words ("web" does not match "website");
+  // a trailing "*" matches any word starting with it; a leading "=" must be the whole question;
+  // Chinese keywords match anywhere. On a tie, the entry listed first wins — keep specific topics on top.
+  var KB = [
+    { k: ["a/b", "ab test*", "experiment*", "实验", "ab测试"], src: null,
+      a: { en: "Honestly — I haven't run production A/B tests in a job yet. But I've built the statistical foundation for it: hypothesis testing, PCA, and a validation framework in my thesis that automatically checks outputs rather than trusting them.",
+          es: "Con sinceridad: aún no he hecho A/B testing en producción en un trabajo. Pero tengo la base estadística: contraste de hipótesis, PCA y un marco de validación en mi tesis que verifica los resultados automáticamente.",
+          zh: "老实说，我还没在工作中做过生产级 A/B 测试。但我有统计基础：假设检验、PCA，以及论文里自动校验输出的验证框架。" } },
+    { k: ["vlm*", "floor plan*", "floorplan*", "plano*", "thesis", "tesis", "tfm", "vision", "vision-language", "qwen3-vl", "论文", "户型", "视觉"], src: {t:"floorplan-graph-vlm", u:"https://github.com/hangui11/floorplan-graph-vlm"},
+      a: { en: "My master's thesis. I built an annotation-free pipeline that turns 1,276 raster floor plans into structured topological graphs using a frozen vision-language model (Qwen3-VL-8B) — no fine-tuning, no labelled data. A six-stage prompting strategy hit 90% classification accuracy, and an automated validation framework plus human-in-the-loop refinement got structurally valid graphs for 90.2% of plans.",
+          es: "Mi tesis de máster. Un pipeline sin anotaciones que convierte 1.276 planos ráster en grafos topológicos con un VLM congelado (Qwen3-VL-8B), sin fine-tuning ni etiquetas. Una estrategia de prompting en seis etapas alcanzó 90% de precisión, y un marco de validación con refinamiento human-in-the-loop logró grafos válidos en el 90,2% de los planos.",
+          zh: "我的硕士论文。用冻结的视觉语言模型 (Qwen3-VL-8B) 把 1,276 张户型图转成结构化拓扑图，无需微调或标注。六阶段提示策略达 90% 分类准确率，自动验证框架加人机协同修正使 90.2% 户型图结构有效。" } },
+    { k: ["rag", "retrieval", "retrieval-augmented", "summariz*", "summaris*", "resumidor", "reviews", "e-commerce", "ecommerce", "faiss", "embedding*", "resena*", "检索", "摘要", "评论"], src: {t:"RAG-Review-Summarizer", u:"https://github.com/hangui11/RAG-Review-Summarizer"},
+      a: { en: "A Retrieval-Augmented Generation (RAG) pipeline that answers query-focused questions over large-scale e-commerce reviews. It uses sentence-transformers embeddings and FAISS dense retrieval to feed a 4-bit quantized Qwen3-4B-Instruct generator. I benchmarked it against TextRank and BART with ROUGE and an LLM-as-a-Judge protocol — RAG scored 9/10, accurately synthesizing conflicting opinions where the baselines hallucinated.",
+          es: "Un pipeline RAG que responde preguntas específicas sobre reseñas de e-commerce a gran escala. Usa embeddings con sentence-transformers y recuperación densa con FAISS para alimentar un generador Qwen3-4B-Instruct cuantizado a 4-bit. Lo comparé con TextRank y BART usando ROUGE y un protocolo LLM-as-a-Judge — RAG obtuvo 9/10, sintetizando opiniones contradictorias donde los baselines alucinaban.",
+          zh: "一个检索增强生成 (RAG) 流水线，针对大规模电商评论回答具体问题。用 sentence-transformers 向量和 FAISS 稠密检索，喂入 4-bit 量化的 Qwen3-4B-Instruct 生成器。与 TextRank、BART 用 ROUGE 及 LLM-as-a-Judge 基准对比——RAG 得 9/10，能综合矛盾观点，而基线会产生幻觉。" } },
+    { k: ["event analytics", "event*", "stream*", "pub/sub", "pubsub", "bigquery", "cloud run", "gcp", "google cloud", "cloud", "ingest*", "ingesta", "real-time", "real time", "fastapi", "dashboard", "事件", "流式", "云"], src: {t:"Event-Platform-Analytics", u:"https://github.com/hangui11/Event-Platform-Analytics"},
+      a: { en: "An event analytics platform on Google Cloud. I designed and deployed two services end to end on Cloud Run: a Node.js/Express ingestion API that validates and enriches incoming events before publishing them to Pub/Sub, and a Python/FastAPI analytics API that serves metrics over HTTP from BigQuery. The part I care about is the reliability: malformed records are rejected at the edge, at-least-once duplicates are deduplicated at query time, and caching plus pre-aggregation cut a representative query from around 3 MB scanned to about 2.4 KB.",
+          es: "Una plataforma de analítica de eventos en Google Cloud. Diseñé y desplegué dos servicios de extremo a extremo en Cloud Run: una API de ingesta en Node.js/Express que valida y enriquece los eventos antes de publicarlos en Pub/Sub, y una API analítica en Python/FastAPI que sirve métricas por HTTP desde BigQuery. Lo que más me importa es la fiabilidad: los registros malformados se rechazan en el borde, los duplicados at-least-once se deduplican en la consulta, y caché más preagregación redujeron una consulta representativa de unos 3 MB escaneados a unos 2,4 KB.",
+          zh: "一个构建在 Google Cloud 上的事件分析平台。我在 Cloud Run 上端到端设计并部署了两个服务：Node.js/Express 接入 API 在发布到 Pub/Sub 前校验并丰富事件，Python/FastAPI 分析 API 通过 HTTP 从 BigQuery 提供指标。我最在意的是可靠性：入口拒绝格式错误的记录，查询阶段对 at-least-once 重复投递去重，缓存加预聚合把一条代表性查询从约 3 MB 扫描量降到约 2.4 KB。" } },
+    { k: ["inspection", "inspeccion", "full-stack", "fullstack", "full stack", "web app*", "webapp", "web application", "aplicacion web", "app web", "frontend", "front-end", "vue*", "node", "node.js", "nodejs", "express", "appwrite", "javascript", "全栈", "评审", "前端"], src: {t:"Software-Inspection-Frontend", u:"https://github.com/hangui11/Software-Inspection-Frontend"},
+      a: { en: "A full-stack collaborative web app for software inspection: users log in, join teams, and review documents submitted by a team leader, with defects and per-member review performance visible to the whole project. I built the Node.js/Express backend and a Vue single-page frontend, using Appwrite for authentication, database, and role-based access control.",
+          es: "Una app web colaborativa full-stack para inspección de software: los usuarios inician sesión, se unen a equipos y revisan documentos de un líder, con defectos y rendimiento por miembro visibles para todo el proyecto. Backend en Node.js/Express y frontend SPA en Vue, con Appwrite para autenticación, base de datos y control de acceso por roles.",
+          zh: "一个全栈协作式软件评审 Web 应用：用户登录、加入团队、评审组长提交的文档，缺陷与每位成员的评审表现对全项目可见。我用 Node.js/Express 构建后端、Vue 单页前端，基于 Appwrite 实现鉴权、数据库与基于角色的访问控制。" } },
+    { k: ["league", "lol", "champion*", "multivariate", "multivariante", "r", "r markdown", "rmarkdown", "pca", "mds", "mca", "statistic*", "estadistic*", "英雄联盟", "多元", "统计"], src: {t:"League-of-Legends-Analysis", u:"https://github.com/hangui11/League-of-Legends-Analysis"},
+      a: { en: "A multivariate statistics project in R: I analyzed 167 game characters across base and growth stats, applying PCA, MDS, MCA, cluster and discriminant analysis to recommend the best fit for each role. Delivered as a reproducible R Markdown report with ggplot2/FactoMineR visualizations.",
+          es: "Un proyecto de estadística multivariante en R: analicé 167 personajes según estadísticas base y de crecimiento, aplicando PCA, MDS, MCA, análisis de clústeres y discriminante para recomendar el mejor por rol. Entregado como informe reproducible en R Markdown con visualizaciones ggplot2/FactoMineR.",
+          zh: "一个 R 语言的多元统计项目：分析 167 名角色的基础与成长属性，运用 PCA、MDS、MCA、聚类与判别分析，为每个位置推荐最优角色。交付为可复现的 R Markdown 报告，配 ggplot2/FactoMineR 可视化。" } },
+    { k: ["steam", "mlops", "satisfaction", "satisfaccion", "neural", "neural network*", "duckdb", "lineage", "满意度", "神经网络"], src: {t:"Steam-Games-Satisfaction", u:"https://github.com/hangui11/Steam-Games-Satisfaction"},
+      a: { en: "An end-to-end MLOps pipeline predicting player satisfaction from 150,000+ Steam records. I did profiling and PCA feature selection to find the real drivers, trained a custom neural network to maximize R², and made it operational — DuckDB for data lineage and instant rollback, plus a monitoring UI. It's a system, not a notebook.",
+          es: "Un pipeline MLOps que predice la satisfacción de jugadores desde 150.000+ registros de Steam. Profiling y selección con PCA, una red neuronal a medida para maximizar el R², y operativo — DuckDB para linaje y rollback, con UI de monitorización. Es un sistema, no un notebook.",
+          zh: "一个端到端 MLOps 流水线，从 15 万+ Steam 记录预测玩家满意度。做了数据分析和 PCA 特征选择，训练定制神经网络最大化 R²，并工程化——DuckDB 保证数据血缘与即时回滚，配监控 UI。是系统，不是 notebook。" } },
+    { k: ["stgf*", "time series", "time-series", "timeseries", "forecast*", "synthetic", "sintetic*", "series temporales", "prevision", "timegan", "chronos", "lora", "fine-tun*", "finetun*", "时序", "时间序列", "合成", "预测"], src: {t:"STGF-LLM", u:"https://github.com/hangui11/STGF-LLM"},
+      a: { en: "STGF-LLM: I fine-tuned an LLM (Qwen3) for time-series forecasting and high-fidelity synthetic data generation, with a history-aware prompting strategy to serialize multivariate temporal data. I benchmarked it against TimeGAN and Chronos-T5 on Train-on-Synthetic-Test-on-Real accuracy.",
+          es: "STGF-LLM: fine-tuning de un LLM (Qwen3) para previsión de series temporales y generación sintética de alta fidelidad, con prompting 'history-aware'. Comparado con TimeGAN y Chronos-T5 en precisión TSTR.",
+          zh: "STGF-LLM：微调 LLM (Qwen3) 做时序预测与高保真合成数据生成，设计'历史感知'提示策略序列化多变量时序数据，并与 TimeGAN、Chronos-T5 在 TSTR 准确率上基准测试。" } },
+    { k: ["lakehouse", "data lake*", "spark", "airflow", "big data", "etl", "pipeline*", "data engineering", "delta lake", "docker", "redis", "数据湖", "数据工程", "大数据"], src: {t:"MDS-BDM", u:"https://github.com/hangui11/MDS-BDM"},
+      a: { en: "My Big Data project: a containerized 3-tier (Cold/Warm/Hot) data lakehouse on Docker, integrating 10 GB of heterogeneous sources through REST APIs with Spark and Redis, and orchestrating daily ETL workflows with Airflow for reliable, high-availability loading.",
+          es: "Mi proyecto de Big Data: un data lakehouse de 3 niveles en Docker, integrando 10 GB de fuentes vía REST APIs con Spark y Redis, y orquestando ETL diario con Airflow para carga fiable y de alta disponibilidad.",
+          zh: "我的大数据项目：Docker 上的三层（冷/温/热）数据湖仓，用 Spark 和 Redis 通过 REST API 集成 10GB 多源数据，Airflow 编排日常 ETL 实现可靠高可用加载。" } },
+    { k: ["aws", "azure", "kafka", "kubernetes", "k8s", "power bi", "powerbi", "snowflake", "databricks", "dbt"], src: null,
+      a: { en: "Honest answer: those aren't on Hang's CV yet. His cloud work is on Google Cloud (BigQuery, Pub/Sub, Cloud Run) rather than AWS or Azure, and his streaming work used Pub/Sub rather than Kafka. He hasn't used dbt or Power BI professionally — but the underlying concepts carry over from his work with Spark, Delta Lake, Docker and cloud data warehouses.",
+          es: "Con sinceridad: eso aún no está en el CV de Hang. Su experiencia cloud es en Google Cloud (BigQuery, Pub/Sub, Cloud Run), no en AWS ni Azure, y su trabajo de streaming usó Pub/Sub en lugar de Kafka. No ha usado dbt ni Power BI profesionalmente, aunque los conceptos se trasladan desde su trabajo con Spark, Delta Lake, Docker y data warehouses en cloud.",
+          zh: "老实说，这些还不在姚航的简历上。他的云经验在 Google Cloud（BigQuery、Pub/Sub、Cloud Run），而不是 AWS 或 Azure；流式处理用的是 Pub/Sub 而非 Kafka。他还没有在工作中用过 dbt 或 Power BI，但相关概念可从他在 Spark、Delta Lake、Docker 和云数仓上的经验迁移。" } },
+    { k: ["ntt*", "intern*", "experience", "work experience", "worked", "job*", "employ*", "banking", "bank", "spring", "spring boot", "java", "junit", "microservice*", "code review", "years of experience", "practicas", "experiencia", "trabajo", "trabajado", "empresa", "实习", "工作", "经验", "经历"], src: null,
+      a: { en: "17 months as a backend engineer intern at NTT DATA (part of the Fortune Global 500 NTT Group), working for a major banking client. I developed Spring microservices that securely route and process financial records, designed REST APIs and relational schemas, sustained ~90% JUnit coverage on core modules, and set up CI/CD with GitHub Actions — in an agile team with code review, resolving production incidents under strict financial-data compliance. It taught me the discipline production systems need.",
+          es: "17 meses como ingeniero backend en prácticas en NTT DATA (Grupo NTT, Fortune Global 500), para un gran cliente bancario. Desarrollé microservicios en Spring que procesan registros financieros de forma segura, diseñé APIs REST y esquemas relacionales, mantuve ~90% de cobertura con JUnit y monté CI/CD con GitHub Actions — en un equipo ágil con revisión de código, resolviendo incidencias de producción bajo estrictos requisitos de cumplimiento.",
+          zh: "在 NTT DATA（世界500强 NTT 集团旗下）做了 17 个月后端实习，服务大型银行客户。用 Spring 开发安全处理金融记录的微服务，设计 REST API 与关系型数据库架构，核心模块 JUnit 覆盖率约 90%，用 GitHub Actions 搭建 CI/CD——在采用代码评审的敏捷团队中工作，并在严格的金融合规要求下处理生产事故。" } },
+    { k: ["skill*", "tech", "tech stack", "stack", "tool*", "technolog*", "framework*", "programming", "programming language*", "python", "sql", "pytorch", "tensorflow", "scikit-learn", "sklearn", "hugging face", "tableau", "machine learning", "ml", "ai", "deep learning", "llm*", "habilidad*", "tecnologia*", "herramienta*", "lenguajes de programacion", "技能", "技术栈", "技术", "工具", "编程"], src: null,
+      a: { en: "Languages: Python, Java, R, SQL, JavaScript. ML/AI — PyTorch, TensorFlow, Scikit-Learn, Hugging Face, FAISS, LLMs, VLMs, RAG, PCA. Data engineering — Spark, Airflow, GCP (BigQuery, Pub/Sub), DuckDB, Delta Lake, ETL, MLOps. Backend/web — Spring Boot, FastAPI, Node.js, Express, Vue.js, REST APIs, microservices. Databases — SQL, relational databases, Redis, DuckDB, BigQuery. Tools — Docker, Git, GitHub Actions, CI/CD, JUnit. BI/stats — Tableau, FactoMineR, ggplot2.",
+          es: "Lenguajes: Python, Java, R, SQL, JavaScript. ML/IA — PyTorch, TensorFlow, Scikit-Learn, Hugging Face, FAISS, LLMs, VLMs, RAG, PCA. Data engineering — Spark, Airflow, GCP (BigQuery, Pub/Sub), DuckDB, Delta Lake, ETL, MLOps. Backend/web — Spring Boot, FastAPI, Node.js, Express, Vue.js, REST APIs, microservicios. Bases de datos — SQL, bases de datos relacionales, Redis, DuckDB, BigQuery. Herramientas — Docker, Git, GitHub Actions, CI/CD, JUnit. BI/estad. — Tableau, FactoMineR, ggplot2.",
+          zh: "语言：Python、Java、R、SQL、JavaScript。ML/AI——PyTorch、TensorFlow、Scikit-Learn、Hugging Face、FAISS、LLMs、VLMs、RAG、PCA。数据工程——Spark、Airflow、GCP (BigQuery、Pub/Sub)、DuckDB、Delta Lake、ETL、MLOps。后端/前端——Spring Boot、FastAPI、Node.js、Express、Vue.js、REST API、微服务。数据库——SQL、关系型数据库、Redis、DuckDB、BigQuery。工具——Docker、Git、GitHub Actions、CI/CD、JUnit。BI/统计——Tableau、FactoMineR、ggplot2。" } },
+    { k: ["language*", "speak*", "spoken", "chinese", "spanish", "catalan", "english", "idioma*", "habla*", "lengua*", "chino", "ingles", "espanol", "语言", "中文", "英语", "西班牙语", "加泰"], src: null,
+      a: { en: "I'm a native Chinese speaker, and fluent in English, Spanish and Catalan. Living in Barcelona for years means Spanish and Catalan are working languages for me, not just conversational — useful for any international team.",
+          es: "Soy hablante nativo de chino, y fluido en inglés, español y catalán. Tras años en Barcelona, español y catalán son lenguas de trabajo para mí.",
+          zh: "我母语是中文，英语、西班牙语、加泰罗尼亚语流利。在巴塞罗那生活多年，西语和加泰语是工作语言而非仅日常对话。" } },
+    { k: ["visa", "permit", "work permit", "work authori*", "authori*", "sponsor*", "nationality", "citizen*", "relocat*", "residence", "residency", "location", "located", "based", "where is he based", "where does he live", "where are you based", "barcelona", "residencia", "permiso", "permiso de trabajo", "autorizacion", "nacionalidad", "ubicacion", "reubic*", "签证", "居留", "工签", "工作许可", "身份", "在哪"], src: null,
+      a: { en: "I'm a Chinese national with a Spanish long-term residence and work permit — so I can work in Spain under a local contract with no sponsorship needed. I'm based in Barcelona and open to relocating.",
+          es: "Soy ciudadano chino con residencia de larga duración y permiso de trabajo en España — puedo trabajar con contrato local sin sponsorship. Estoy en Barcelona y abierto a reubicarme.",
+          zh: "我是中国公民，持西班牙长期居留和工作许可——可在西班牙以本地合同工作，无需公司担保。人在巴塞罗那，可考虑搬迁。" } },
+    { k: ["education", "educat*", "degree*", "master*", "msc", "bsc", "bachelor*", "universit*", "upc", "beihang", "study", "studied", "studies", "graduat*", "gpa", "grade*", "exchange", "academic*", "formacion", "estudi*", "grado", "carrera", "titulacion", "教育", "学历", "硕士", "本科", "大学", "学位", "毕业", "北航", "交换"], src: null,
+      a: { en: "Hang holds an MSc in Data Science (2024–2026) and a BSc in Computer Science (2020–2024), both from Universitat Politècnica de Catalunya (UPC) in Barcelona. During the master's he spent a semester as an exchange student at Beihang University in Beijing (Sep 2025 – Jan 2026), taking Data Mining, Foundation Models and Information Retrieval. His master's thesis used vision-language models to turn floor plans into structured graphs.",
+          es: "Hang tiene un Máster en Data Science (2024–2026) y un Grado en Ingeniería Informática (2020–2024), ambos por la Universitat Politècnica de Catalunya (UPC) en Barcelona. Durante el máster hizo un semestre de intercambio en la Universidad de Beihang en Pekín (sep. 2025 – ene. 2026), con Data Mining, Foundation Models e Information Retrieval. Su tesis de máster usó modelos visión-lenguaje para convertir planos en grafos estructurados.",
+          zh: "姚航拥有加泰罗尼亚理工大学 (UPC) 数据科学硕士（2024–2026）和计算机科学学士（2020–2024）学位。硕士期间在北京航空航天大学交换一学期（2025.09 – 2026.01），修读数据挖掘、基础模型与信息检索。硕士论文用视觉语言模型把户型图转为结构化图。" } },
+    { k: ["availab*", "start", "start date", "when can", "notice", "notice period", "immediately", "join", "disponib*", "incorpor*", "empezar", "preaviso", "cuando", "到岗", "入职", "什么时候", "何时", "开始"], src: null,
+      a: { en: "Hang completed his MSc in Data Science in June 2026 and is available to start immediately, with no notice period. He's based in Barcelona, open to relocating, and holds a Spanish work permit, so no sponsorship is needed.",
+          es: "Hang terminó su Máster en Data Science en junio de 2026 y está disponible para incorporarse de inmediato, sin preaviso. Vive en Barcelona, está abierto a reubicarse y tiene permiso de trabajo en España, así que no necesita sponsorship.",
+          zh: "姚航已于 2026 年 6 月完成数据科学硕士，可立即到岗，无需离职通知期。现居巴塞罗那，可考虑搬迁，持西班牙工作许可，无需公司担保。" } },
+    { k: ["contact*", "email", "e-mail", "mail", "reach", "get in touch", "linkedin", "github", "phone", "call", "interview", "contacto", "contactar", "correo", "telefono", "entrevista", "联系", "邮箱", "邮件", "电话", "领英", "面试"], src: null,
+      a: { en: "The quickest way to reach Hang is email: hangyao2002@gmail.com. You can also find him on LinkedIn (linkedin.com/in/hangui11) and see his code on GitHub (github.com/hangui11).",
+          es: "La forma más rápida de contactar con Hang es por email: hangyao2002@gmail.com. También está en LinkedIn (linkedin.com/in/hangui11) y su código está en GitHub (github.com/hangui11).",
+          zh: "联系姚航最快的方式是邮件：hangyao2002@gmail.com。也可以在领英 (linkedin.com/in/hangui11) 找到他，代码在 GitHub (github.com/hangui11)。" } },
+    { k: ["website", "web site", "webpage", "web page", "this site", "this page", "site", "page", "portfolio", "chatbot", "chat bot", "bot", "assistant", "this chat", "how does this work", "how was this built", "built this", "made this", "are you an ai", "are you a bot", "are you real", "pagina", "pagina web", "sitio", "sitio web", "esta web", "asistente", "chat", "网站", "网页", "页面", "聊天", "机器人", "助手",
+           "=what is this", "=what's this", "=que es esto", "=这是什么", "=who are you", "=quien eres", "=你是谁"], src: null,
+      a: { en: "This is Hang's interactive résumé (resume.hangui11.com): one static page in English, Spanish and Chinese with his profile, experience, projects, education and skills, each project linked to its GitHub repository. I'm the assistant on the right — your question goes to a small serverless function that sends it, together with Hang's CV, to an open-weight LLM on Hugging Face, so answers come only from his CV. If the model is unavailable, a knowledge base built into the page answers instead.",
+          es: "Es el currículum interactivo de Hang (resume.hangui11.com): una página estática en inglés, español y chino con su perfil, experiencia, proyectos, formación y habilidades, cada proyecto enlazado a su repositorio de GitHub. Yo soy el asistente de la derecha: tu pregunta va a una pequeña función serverless que la envía, junto con el CV de Hang, a un LLM open-weight en Hugging Face, así que las respuestas salen solo de su CV. Si el modelo no está disponible, responde una base de conocimiento integrada en la página.",
+          zh: "这是姚航的交互式简历网站 (resume.hangui11.com)：一个支持中、英、西三语的静态页面，展示他的个人简介、工作经历、项目、教育背景与技能，每个项目都链接到 GitHub 仓库。我是右侧的助手——你的问题会发送到一个小型 serverless 函数，它把问题连同姚航的简历交给 Hugging Face 上的开源大模型，因此回答只来自他的简历。若模型不可用，页面内置的知识库会接手回答。" } },
+    { k: ["strongest", "best project*", "project*", "strength*", "overview", "summary", "profile", "fit", "good fit", "why hire", "why should we hire", "proyecto*", "fuerte*", "encaja*", "perfil", "resumen", "项目", "适合", "优势", "最强", "概述"], src: null,
+      a: { en: "Hang's work spans data engineering, ML/NLP and production software. Highlights: a RAG review-summarizer (FAISS + Qwen, scoring 9/10 vs TextRank/BART baselines); an event analytics platform on Google Cloud (two deployed services, Pub/Sub streaming into BigQuery, with deduplication and pre-aggregation cutting query cost from ~3 MB to ~2.4 KB); a full-stack software-inspection platform (Node/Express/Vue/Appwrite with role-based access); a VLM thesis turning 1,276 floor plans into structured graphs (90.2% valid, annotation-free); STGF-LLM fine-tuning an LLM for time-series; a Steam MLOps pipeline on 150k+ records; and an end-to-end data lakehouse on Spark/Airflow. Core skills: Python, SQL, Java, R, Spark, Airflow, GCP, FastAPI, PyTorch, Hugging Face, LLMs/VLMs — plus 17 months of production engineering at NTT DATA.",
+          es: "El trabajo de Hang abarca data engineering, ML/NLP y software en producción. Destacados: un resumidor de reseñas RAG (FAISS + Qwen, 9/10 frente a TextRank/BART); una plataforma de analítica de eventos en Google Cloud (dos servicios desplegados, streaming con Pub/Sub hacia BigQuery, con deduplicación y preagregación que bajan el coste de consulta de ~3 MB a ~2,4 KB); una plataforma full-stack de inspección de software (Node/Express/Vue/Appwrite con acceso por roles); una tesis VLM que convierte 1.276 planos en grafos (90,2% válidos); STGF-LLM con fine-tuning para series temporales; un pipeline MLOps de Steam sobre 150k+ registros; y un data lakehouse con Spark/Airflow. Skills: Python, SQL, Java, R, Spark, Airflow, GCP, FastAPI, PyTorch, Hugging Face, LLMs/VLMs, y 17 meses en NTT DATA.",
+          zh: "姚航的工作覆盖数据工程、ML/NLP 与生产级软件。亮点：RAG 评论摘要器（FAISS + Qwen，对比 TextRank/BART 得 9/10）；Google Cloud 上的事件分析平台（两个已部署服务，Pub/Sub 流式写入 BigQuery，去重加预聚合把查询成本从约 3 MB 降到约 2.4 KB）；全栈软件评审平台（Node/Express/Vue/Appwrite，含角色权限）；VLM 论文将 1,276 张户型图转为结构化图（90.2% 有效）；STGF-LLM 微调做时序；Steam MLOps 流水线（15 万+ 记录）；以及基于 Spark/Airflow 的数据湖仓。核心技能：Python、SQL、Java、R、Spark、Airflow、GCP、FastAPI、PyTorch、Hugging Face、LLMs/VLMs，外加 NTT DATA 的 17 个月生产经验。" } },
+    { k: ["why data", "why data science", "motivat*", "por que", "por que data", "motivacion", "为什么", "动机"], w: 0.5, src: null,
+      a: { en: "What I enjoy most is the full path from a messy question to a decision — taking raw data, finding the variables that actually matter, building a model, and knowing how much to trust it. I like data science where the answer becomes a real product decision, not just a report.",
+          es: "Lo que más disfruto es el camino completo de una pregunta confusa a una decisión — datos crudos, encontrar las variables que importan, construir un modelo y saber cuánto fiarme. Me gusta que la respuesta sea una decisión de producto, no un informe.",
+          zh: "我最享受从模糊问题到决策的完整路径——拿原始数据，找出真正重要的变量，建模型，并知道该多信任它。我喜欢答案能变成真实产品决策的数据科学，而不只是一份报告。" } },
+    { k: ["thank*", "thx", "gracias", "谢谢", "感谢"], w: 0.5, src: null,
+      a: { en: "You're welcome! If you'd like to talk to Hang directly, email hangyao2002@gmail.com.",
+          es: "¡De nada! Si quieres hablar directamente con Hang, escríbele a hangyao2002@gmail.com.",
+          zh: "不客气！如需直接联系姚航，请发邮件至 hangyao2002@gmail.com。" } },
+    { k: ["=help", "=?", "=ayuda", "=帮助", "what can i ask", "what can you do", "what can you answer", "what do you know", "what should i ask", "topics", "que puedo preguntar", "que sabes", "temas", "能问什么", "可以问什么", "你能做什么"], src: null, a: HELP },
+    { k: ["=hi", "=hello", "=hey", "=hi there", "=hello there", "=good morning", "=good afternoon", "=hola", "=buenas", "=buenos dias", "=你好", "=您好", "=嗨"], src: null, a: GREET },
+    // Last, at half weight: generic intro phrases ("tell me about…") lose ties to any specific topic.
+    { k: ["who is", "who's", "whos", "about hang", "about him", "about yourself", "introduce*", "introduction", "tell me about", "background", "describe", "bio", "quien es", "sobre hang", "sobre el", "sobre ti", "presenta*", "cuentame", "hablame", "介绍", "是谁", "简介", "背景",
+          "=hang", "=hang yao", "=yao", "=姚航"], w: 0.5, src: null,
+      a: { en: "Hang Yao (姚航) is a Data & Software Engineer based in Barcelona. He holds a BSc in Computer Science and an MSc in Data Science from UPC, and spent 17 months at NTT DATA building production Spring microservices for a major banking client. His projects range from a RAG review summarizer and a VLM-based master's thesis to an event analytics platform on Google Cloud and a Spark/Airflow data lakehouse. He speaks Chinese, English, Spanish and Catalan, holds a Spanish work permit, and is available immediately.",
+          es: "Hang Yao (姚航) es un ingeniero de datos y software afincado en Barcelona. Tiene un Grado en Ingeniería Informática y un Máster en Data Science por la UPC, y pasó 17 meses en NTT DATA construyendo microservicios Spring en producción para un gran cliente bancario. Sus proyectos van de un resumidor de reseñas con RAG y una tesis de máster con VLMs a una plataforma de analítica de eventos en Google Cloud y un data lakehouse con Spark/Airflow. Habla chino, inglés, español y catalán, tiene permiso de trabajo en España y está disponible de inmediato.",
+          zh: "姚航 (Hang Yao) 是常驻巴塞罗那的数据与软件工程师，拥有 UPC 计算机科学学士与数据科学硕士学位，曾在 NTT DATA 工作 17 个月，为大型银行客户构建生产级 Spring 微服务。他的项目涵盖 RAG 评论摘要器、基于 VLM 的硕士论文、Google Cloud 上的事件分析平台，以及 Spark/Airflow 数据湖仓。他会说中文、英语、西班牙语和加泰罗尼亚语，持西班牙工作许可，可立即到岗。" } }
+  ];
 
   var CHIPSETS = {
-    en: [["The VLM thesis","vlm thesis"],["A/B testing?","a/b testing experience"],["Data engineering","lakehouse spark"],["Work permit?","work permit visa"]],
-    es: [["La tesis VLM","tesis vlm"],["¿A/B testing?","experiencia a/b testing"],["Data engineering","lakehouse spark"],["¿Permiso de trabajo?","permiso de trabajo"]],
-    zh: [["VLM 论文","vlm 论文"],["A/B 测试经验？","a/b 测试 实验"],["数据工程","数据湖 spark"],["工作许可？","居留 工签"]]
+    en: [["The RAG system","rag retrieval"],["The VLM thesis","vlm thesis"],["Cloud & streaming","event analytics streaming"],["Work permit?","work permit visa"]],
+    es: [["El sistema RAG","rag retrieval"],["La tesis VLM","tesis vlm"],["Cloud y streaming","event analytics streaming"],["¿Permiso de trabajo?","permiso de trabajo"]],
+    zh: [["RAG 系统","rag 检索"],["VLM 论文","vlm 论文"],["云与流式处理","事件 流式"],["工作许可？","居留 工签"]]
   };
 
   function lang() { return r.dataset.lang || "en"; }
@@ -689,32 +741,58 @@
   }
   function hideTyping() { var t = document.getElementById("typing"); if (t) t.remove(); }
 
-  function localAnswer(qraw) {
-    var query = qraw.toLowerCase().trim();
-    if (query === "help" || query === "?" || query === "ayuda" || query === "帮助") return { text: HELP[lang()] };
-    var best = null, bestHits = 0;
-    for (var i = 0; i < KB.length; i++) {
-      var hits = 0;
-      for (var j = 0; j < KB[i].k.length; j++) if (query.indexOf(KB[i].k[j]) !== -1) hits++;
-      if (hits > bestHits) { bestHits = hits; best = KB[i]; }
-    }
-    if (best) return { text: best.a[lang()], src: best.src };
-    return { text: NOMATCH[lang()] };
+  // Lowercase, strip accents (qué → que, reseña → resena) and unify apostrophes.
+  function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’‘]/g, "'").trim(); }
+  var CJK = /[㐀-鿿]/;
+  function hit(q, key) {
+    if (key.charAt(0) === "=") return q === key.slice(1) || q.replace(/^[\s¿¡]+|[\s?!.。？！]+$/g, "") === key.slice(1);
+    if (CJK.test(key)) return q.indexOf(key) !== -1;
+    var prefix = key.charAt(key.length - 1) === "*";
+    var k = norm(prefix ? key.slice(0, -1) : key).replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&");
+    return new RegExp("(^|[^a-z0-9])" + k + (prefix ? "" : "(?![a-z0-9])")).test(q);
+  }
+  // Phrases and longer Chinese keywords are more specific, so they count double.
+  function score(q, e) {
+    var s = 0;
+    for (var j = 0; j < e.k.length; j++)
+      if (hit(q, e.k[j])) s += (/\s/.test(e.k[j]) || (CJK.test(e.k[j]) && e.k[j].length >= 3)) ? 2 : 1;
+    return s * (e.w || 1);
+  }
+  // Answer in the language the visitor typed in; fall back to the page language for bare keywords.
+  function answerLang(q) {
+    if (CJK.test(q)) return "zh";
+    if (/[¿¡]|(^|[^a-z])(que|quien|como|donde|cual|cuales|cuando|tiene|sabe|sobre|habla|puede|esta|su|sus|del|experiencia|proyectos?|trabajo|estudios|hola|gracias)(?![a-z])/.test(q)) return "es";
+    if (/(^|[^a-z])(what|who|how|why|when|where|does|do|is|are|can|tell|his|the|about|your|you|hi|hello|thanks)(?![a-z])/.test(q)) return "en";
+    return lang() === "zh" ? "en" : lang();
   }
 
-  function respond(query) {
+  function localAnswer(qraw) {
+    var q = norm(qraw), L = answerLang(q);
+    var best = null, bestScore = 0;
+    for (var i = 0; i < KB.length; i++) {
+      var s = score(q, KB[i]);
+      if (s > bestScore) { bestScore = s; best = KB[i]; }
+    }
+    if (best) return { text: best.a[L], src: best.src };
+    return { text: NOMATCH[L] };
+  }
+
+  function respond(query, localOnly) {
     showTyping();
     var delay = 380 + Math.random() * 500;
-    if (BACKEND_URL) {
+    if (BACKEND_URL && !localOnly) {
+      // Don't keep a visitor waiting on a slow model: after 15 s, answer locally instead.
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 15000) : null;
       return fetch(BACKEND_URL, { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: query, lang: lang() }) })
+        body: JSON.stringify({ question: query, lang: lang() }), signal: ctrl ? ctrl.signal : undefined })
         .then(function (res) { if (!res.ok) throw new Error("backend " + res.status); return res.json(); })
         .then(function (data) {
-          hideTyping();
+          clearTimeout(timer); hideTyping();
           if (data && data.answer) return typeAI(data.answer, data.source || null);
           var a = localAnswer(query); return typeAI(a.text, a.src);   // empty answer → fall back
         })
-        .catch(function () { hideTyping(); var a = localAnswer(query); return typeAI(a.text, a.src); });
+        .catch(function () { clearTimeout(timer); hideTyping(); var a = localAnswer(query); return typeAI(a.text, a.src); });
     }
     return new Promise(function (resolve) {
       setTimeout(function () { hideTyping(); var a = localAnswer(query); typeAI(a.text, a.src).then(resolve); }, delay);
@@ -750,7 +828,8 @@
   function runDemo() {
     if (demoRan) return; demoRan = true;
     var q = DEMO[lang()] || DEMO.en;
-    setTimeout(function () { addUser(q); respond(q); }, 900);
+    // Answered locally: it runs on every page load, so it shouldn't spend model credits.
+    setTimeout(function () { addUser(q); respond(q, true); }, 900);
   }
 
   /* init */
